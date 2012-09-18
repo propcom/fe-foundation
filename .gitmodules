@@ -1,0 +1,21 @@
+[submodule "fuel/core"]
+	path = fuel/core
+	url = /var/git/fuel/core/
+[submodule "fuel/packages/orm"]
+	path = fuel/packages/orm
+	url = /var/git/fuel/orm
+[submodule "fuel/packages/auth"]
+	path = fuel/packages/auth
+	url = /var/git/fuel/auth
+[submodule "fuel/packages/oil"]
+	path = fuel/packages/oil
+	url = /var/git/fuel/oil
+[submodule "docs"]
+	path = docs
+	url = /var/git/fuel/docs
+[submodule "fuel/packages/parser"]
+	path = fuel/packages/parser
+	url = /var/git/fuel/parser
+[submodule "fuel/packages/email"]
+	path = fuel/packages/email
+	url = /var/git/fuel/email
