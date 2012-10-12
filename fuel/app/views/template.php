@@ -42,7 +42,7 @@
 	    </header>
 	     
 	    <nav>	
-			<a href="/index" <?php if ($page=="home") :?>class="on"<?php endif;?>>Home</a>
+			<a href="/" <?php if ($page=="home") :?>class="on"<?php endif;?>>Home</a>
 			<a href="/contact" <?php if ($page=="contact") :?>class="on"<?php endif;?>>Contact</a>
 		</nav>
 
@@ -51,7 +51,7 @@
 		</section><!-- End of main -->
 
 		<footer>
-			<a href="http://www/propcom.co.uk"><img src="/assets/img/siteby.png" alt="Site by Propcom" width="109" height="23" /></a>
+			<a href="http://www.propcom.co.uk"><img src="/assets/img/siteby.png" alt="Site by Propeller" width="109" height="23" /></a>
 		</footer>
 
 	</div> <!-- end of page width -->
