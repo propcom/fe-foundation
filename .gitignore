@@ -2,8 +2,8 @@
 # Old FuelPHP paths
 
 # data dirs
-httpdocs/data/*
-includes/fuel/app/data/*
+httpdocs/data
+includes/fuel/app/data
 
 # Standard FuelPHP ignores
 includes/fuel/app/logs/*
@@ -28,8 +28,8 @@ includes/fuel/app/config/*/*
 # New FuelPHP paths
 
 # data dirs
-public/data/*
-fuel/app/data/*
+public/data
+fuel/app/data
 
 # Standard FuelPHP ignores
 fuel/app/logs/*
