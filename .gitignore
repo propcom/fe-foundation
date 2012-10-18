@@ -1,32 +1,3 @@
-####################
-# Old FuelPHP paths
-
-# data dirs
-httpdocs/data
-includes/fuel/app/data
-
-# Standard FuelPHP ignores
-includes/fuel/app/logs/*
-includes/fuel/app/cache/*
-includes/fuel/app/tmp/*
-
-# config files
-includes/fuel/app/config/migrations.php
-includes/fuel/app/config/*/migrations.php
-includes/fuel/app/config/crypt.php
-includes/fuel/app/config/*/crypt.php
-
-# custom environments
-.fuelenv
-includes/fuel/app/config/*/*
-!includes/fuel/app/config/development/
-!includes/fuel/app/config/test/
-!includes/fuel/app/config/stage/
-!includes/fuel/app/config/production/
-
-####################
-# New FuelPHP paths
-
 # data dirs
 public/data
 fuel/app/data
