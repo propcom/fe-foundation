@@ -34,16 +34,13 @@
 </head>
 
 <body id="<?=$page; ?>">
-	<div class="page-width">
-	    <header id="header">
 
-	    	Fuel HTML5 Template for 2 Day builds<br />
-	    	<img src="/assets/img/top-logo.jpg" />
+	<div class="container">
+	    <header class="header">
+			<h1>Two Day Build</h1>
 	    </header>
 	     
 	    <nav>	
-			<a href="/" <?php if ($page=="home") :?>class="on"<?php endif;?>>Home</a>
-			<a href="/contact" <?php if ($page=="contact") :?>class="on"<?php endif;?>>Contact</a>
 		</nav>
 
 		<section role="main">
@@ -54,7 +51,7 @@
 			<a href="http://www.propcom.co.uk"><img src="/assets/img/siteby.png" alt="Site by Propeller" width="109" height="23" /></a>
 		</footer>
 
-	</div> <!-- end of page width -->
+	</div> <!-- end of main container -->
 
 	<!-- JavaScript at the bottom for fast page loading -->
 

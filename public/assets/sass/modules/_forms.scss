@@ -1,0 +1,23 @@
+/*  Form elements  */
+
+.form-block{
+	display: inline;
+	float: left;
+	width: 100%;
+
+	label{
+		clear: left;
+		float: left;
+		width: 30%;
+
+		&.radio-group-label{
+			width: 100%;
+		}
+	}
+
+	input{
+		box-sizing: border-box;
+		float: left;
+		width: 70%;
+	}
+}
