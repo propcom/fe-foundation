@@ -10,7 +10,7 @@
 		<a href="" class="twelve columns alpha">Social</a>
 	</nav>
 
-	<div class="nine columns offset-by-two">
+	<div class="nine columns offset-by-three">
 		<div class="sg-header">Style guide</div>
 
 		<div class="sg-sub">Headers</div>
@@ -65,8 +65,13 @@
 		</div>
 
 		<div class="form-block">
-			<label for="email-input">Label</label>
+			<label for="email-input">Email Label</label>
 			<input type="email" name="" value="" id="email-input" placeholder="Email input" />
+		</div>
+
+		<div class="form-block">
+			<label for="email-input">Textarea Label</label>
+			<textarea name="" id="email-input"></textarea>
 		</div>
 
 		<div class="form-block">
