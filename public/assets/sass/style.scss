@@ -5,12 +5,24 @@
 @import "base/_base";
 @import "base/_typography";
 
-/*  Layout  */
+/*  Layout  
+	For different page layouts on the
+	site just create new files in order
+	to make it easily managable. 
+	ie.
+		_blog.scss
+*/
+
 @import "layout/_skeleton";
 @import "layout/_site";
 
-/*  Modules  */
-@import "modules/_style-guide";
+/*  Modules  
+	Write all the modular SCSS.
+	Divide everything up in here, doesnt matter hoe
+	many files as it will all be compressed when live.
+*/
+
+@import "modules/_style-guide"; /* This only contains hte styling for the SG headers. Nothing else to be in here. */
 @import "modules/_elements";
 @import "modules/_forms";
 

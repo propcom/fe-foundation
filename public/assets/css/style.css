@@ -444,7 +444,13 @@ h4, .zeta-header {
   font-size: 1em;
   line-height: 1.125em; }
 
-/*  Layout  */
+/*  Layout  
+	For different page layouts on the
+	site just create new files in order
+	to make it easily managable. 
+	ie.
+		_blog.scss
+*/
 /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
@@ -675,13 +681,20 @@ h4, .zeta-header {
   .container .one-third.column,
   .container .two-thirds.column {
     width: 420px; } }
-/*  Modules  */
+/*  Modules  
+	Write all the modular SCSS.
+	Divide everything up in here, doesnt matter hoe
+	many files as it will all be compressed when live.
+*/
 /*
 	Style guide 
 
 	These styles are only for the style guide.
 	they will not appear anywhere else on the site.
 */
+.sg-container {
+  margin-top: 50px; }
+
 .sg-header {
   font-size: 1.25em;
   font-weight: bold;
@@ -695,6 +708,11 @@ h4, .zeta-header {
   text-transform: uppercase;
   width: 100%; }
 
+.sg-nav {
+  position: fixed;
+  top: 100px; }
+
+/* This only contains hte styling for the SG headers. Nothing else to be in here. */
 /*  Form elements  */
 .form-block {
   display: inline;
