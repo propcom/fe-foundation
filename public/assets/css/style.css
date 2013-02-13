@@ -692,9 +692,6 @@ h4, .zeta-header {
 	These styles are only for the style guide.
 	they will not appear anywhere else on the site.
 */
-.sg-container {
-  margin-top: 50px; }
-
 .sg-header {
   font-size: 1.25em;
   font-weight: bold;
@@ -704,7 +701,7 @@ h4, .zeta-header {
   border-bottom: 1px solid #eee;
   float: left;
   font-size: 1em;
-  margin: 1em 0 0.2em 0;
+  margin: 2em 0 0.7em 0;
   text-transform: uppercase;
   width: 100%; }
 
