@@ -1,20 +1,32 @@
 <div class="container sg-container">
 
-	<nav class="two columns sg-nav">
-		<a href="" class="twelve columns alpha">Headers</a>
-		<a href="" class="twelve columns alpha">Navigation</a>
-		<a href="" class="twelve columns alpha">Buttons &amp; Links</a>
-		<a href="" class="twelve columns alpha">Copy</a>
-		<a href="" class="twelve columns alpha">Forms</a>
-		<a href="" class="twelve columns alpha">Images</a>
-		<a href="" class="twelve columns alpha">Tables</a>
-		<a href="" class="twelve columns alpha">Social</a>
+	<div class="three columns">
+		<nav class="sg-nav">
+			<a href="" class="twelve columns alpha">Headers</a>
+			<a href="" class="twelve columns alpha">Navigation</a>
+			<a href="" class="twelve columns alpha">Buttons &amp; Links</a>
+			<a href="" class="twelve columns alpha">Copy</a>
+			<a href="" class="twelve columns alpha">Forms</a>
+			<a href="" class="twelve columns alpha">Images</a>
+			<a href="" class="twelve columns alpha">Tables</a>
+			<a href="" class="twelve columns alpha">Social</a>
 
-		<p class="twelve columns alpha"><em>Also add seperate sections for site specific elements. such as Hero elements or sliders.</em>
-		<p><em>Everything on the site should first be in here.</em>
-	</nav>
+			<p class="twelve columns alpha"><em>Also add seperate sections for site specific elements. such as Hero elements or sliders.</em>
+			<p><em>Everything on the site should first be in here.</em>
+		</nav>
 
-	<div class="nine columns offset-by-three">
+		<div class="sg-sub">Colours</div>
+
+		<div class="sg-color background"></div>
+		<div class="sg-color main"></div>
+		<div class="sg-color accent"></div>
+		<div class="sg-color accent2"></div>
+		<div class="sg-color highlight"></div>
+		<div class="sg-color highlight2"></div>
+
+	</div>
+
+	<div class="nine columns">
 		<div class="sg-header">Style guide</div>
 
 		<div class="sg-sub">Headers</div>
