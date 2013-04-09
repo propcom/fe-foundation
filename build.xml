@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<project default="default" basedir=".">
+ 
+	<target name="default" depends="load.properties, sass" />
+ 
+	<target name="load.properties">
+		<echo>-- Initialize Variables</echo>
+ 
+		<!-- Hopefully the line below is the only one you need to change -->
+		<property name="template.path" value="public/assets/" />
+		<echo message="template.path:    ${template.path}" />
+ 
+		<property name="sass.path" value="${template.path}/sass/main.scss" />
+		<echo message="sass.path:        ${sass.path}" />
+ 
+		<property name="css.path" value="${template.path}/css/main.css" />
+		<echo message="css.path:         ${css.path}" />
+ 
+		<echo></echo>
+		<echo>-- Tools</echo>
+ 
+		<property name="sass.bin" value="sass" />
+		<echo message="sass.bin:         ${sass.bin}" />
+	</target>
+ 
+	<target name="sass" depends="load.properties">
+		<echo>Convert SASS to CSS</echo>
+		<echo>${sass.bin} --update --force ${sass.path}:${css.path}</echo>
+ 
+		<exec executable="${sass.bin}" failonerror="true">
+			<arg line="--update" />
+			<arg line="--force" />
+			<arg line="${sass.path}:${css.path}" />
+		</exec>
+	</target>
+ 
+</project>
