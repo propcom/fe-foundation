@@ -30,6 +30,7 @@
 		<exec executable="${sass.bin}" failonerror="true">
 			<arg line="--update" />
 			<arg line="--force" />
+			<arg line="--style compressed" />
 			<arg line="${sass.path}:${css.path}" />
 		</exec>
 	</target>
