@@ -7,7 +7,7 @@
 		<echo>-- Initialize Variables</echo>
  
 		<!-- Hopefully the line below is the only one you need to change -->
-		<property name="template.path" value="public/assets/" />
+		<property name="template.path" value="public/assets" />
 		<echo message="template.path:    ${template.path}" />
  
 		<property name="sass.path" value="${template.path}/sass/main.scss" />
