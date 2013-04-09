@@ -10,10 +10,10 @@
 		<property name="template.path" value="public/assets" />
 		<echo message="template.path:    ${template.path}" />
  
-		<property name="sass.path" value="${template.path}/sass/main.scss" />
+		<property name="sass.path" value="${template.path}/sass/style.scss" />
 		<echo message="sass.path:        ${sass.path}" />
  
-		<property name="css.path" value="${template.path}/css/main.css" />
+		<property name="css.path" value="${template.path}/css/style.css" />
 		<echo message="css.path:         ${css.path}" />
  
 		<echo></echo>
