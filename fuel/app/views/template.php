@@ -62,11 +62,14 @@
 	<?php if ($page == "contact"): ?>
 		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<?php endif ?>
-
-	<!-- scripts concatenated and minified via build script -->
-	<script src="/assets/js/plugins.js"></script>
-	<script src="/assets/js/script.js"></script>
-	<!-- end scripts -->
+	
+	<? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
+		<script src="/assets/js/lib/plugins.js"></script>
+		<script src="/assets/js/src/script.js"></script>
+	<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
+		<script src="/assets/js/scripts.min.js"></script>
+	<? ENDIF; ?>
+	
 
 
 	<!--[if lt IE 7 ]>
