@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <project default="default" basedir=".">
  
-	<target name="default" depends="load.properties, sass" />
+	<target name="default" depends="load.properties, sass, js.concatenate, js.minify" />
  
 	<target name="load.properties">
 		<echo>-- Initialize Variables</echo>
@@ -16,7 +16,7 @@
 		<property name="css.path" value="${template.path}/css/style.css" />
 		<echo message="css.path:         ${css.path}" />
 
-		<property name="js.path" value="public/assets/js" />
+		<property name="js.path" value="${template.path}/js" />
         <echo message="js.path:                    ${js.path}" />
  
 		<echo></echo>
