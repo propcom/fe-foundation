@@ -30,7 +30,7 @@
 	<!-- All JavaScript at the bottom, except this Modernizr build.
 	Modernizr enables HTML5 elements & feature detects for optimal performance.
 	Create your own custom Modernizr build: www.modernizr.com/download/ -->
-	<script src="/assets/js/libs/modernizr-2.5.0.min.js"></script>
+	<script src="/assets/js/vendor/modernizr-2.5.0.min.js"></script>
 </head>
 
 <body id="<?=$page; ?>">
@@ -56,8 +56,8 @@
 	<!-- JavaScript at the bottom for fast page loading -->
 
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="/assets/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	<script src="//ajax.googleapis.com/ajax/vendor/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
 
 	<?php if ($page == "contact"): ?>
 		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -67,13 +67,15 @@
 		<script src="/assets/js/lib/plugins.js"></script>
 		<script src="/assets/js/src/script.js"></script>
 	<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
+		<script src="/assets/js/scripts.js"></script>
+	<? ELSE: ?>
 		<script src="/assets/js/scripts.min.js"></script>
 	<? ENDIF; ?>
 	
 
 
 	<!--[if lt IE 7 ]>
-	  <script src="/assets/js/libs/dd_belatedpng.js"></script>
+	  <script src="/assets/js/vendor/dd_belatedpng.js"></script>
 	  <script defer="defer">DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
 	<![endif]-->
 
