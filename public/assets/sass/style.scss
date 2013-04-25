@@ -5,11 +5,11 @@
 @import "base/_normalize";
 @import "base/_base";
 @import "base/_typography";
-
-/*  Layout  
+@import "base/_fancybox";
+/*  Layout
 	For different page layouts on the
 	site just create new files in order
-	to make it easily managable. 
+	to make it easily managable.
 	ie.
 		_blog.scss
 */
@@ -17,7 +17,7 @@
 @import "layout/_skeleton";
 @import "layout/_site";
 
-/*  Modules  
+/*  Modules
 	Write all the modular SCSS.
 	Divide everything up in here, doesnt matter hoe
 	many files as it will all be compressed when live.
@@ -26,8 +26,12 @@
 @import "modules/_style-guide"; /* This only contains hte styling for the SG headers. Nothing else to be in here. */
 @import "modules/_elements";
 @import "modules/_forms";
+@import "modules/_twitter-feed";
+@import "modules/_gallery";
+@import "modules/_events";
+@import "modules/_transition";
 
-/*  States 
+/*  States
 	Responsive files are to be named with
 	their viewports.
 	ie:
@@ -39,7 +43,7 @@
 
 @import "state/_rwd";
 
-/*  Libs  
+/*  Libs
 	This is any CSS that has come from a plugin.
 	Suach as fancybox, pretty photo, etc.
 */

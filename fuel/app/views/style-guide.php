@@ -23,6 +23,12 @@
 		<div class="sg-color accent2"></div>
 		<div class="sg-color highlight"></div>
 		<div class="sg-color highlight2"></div>
+		<br style='clear:both'/>
+
+		<h3>Twitter Feed</h3>
+		<div class='twitter-feed'>
+			<?php include("inc/twitter.php"); ?>
+		</div>
 
 	</div>
 
@@ -50,7 +56,7 @@
 				<a href="">Nav Link</a>
 			</nav>
 		</div>
-	
+
 		<div class="sg-sub">Buttons &amp; Links</div>
 		<div class="sg-block">
 
@@ -148,7 +154,7 @@
 
 		</div>
 
-			<div class="sg-sub">Images</div>
+		<div class="sg-sub">Images</div>
 		<div class="sg-block">
 
 			<figure class="image">
@@ -162,62 +168,62 @@
 				<figcaption>In non velit non ligula laoreet ultrices.</figcaption>
 			</figure>
 
-		<div class="sg-sub">Tables</div>
-		<div class="sg-block">
-			<table>
-				<thead>
-					<tr>
-						<th>Table Header</th>
-						<th>Table Header</th>
-					</tr>
-				</thead>
+			<div class="sg-sub">Tables</div>
+			<div class="sg-block">
+				<table>
+					<thead>
+						<tr>
+							<th>Table Header</th>
+							<th>Table Header</th>
+						</tr>
+					</thead>
 
-				<tbody>
-					<tr>
-						<td>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. </td>
-						
-						<td>Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. A</td>
-						
-					</tr>
-				</tbody>
-			</table>
+					<tbody>
+						<tr>
+							<td>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. </td>
 
-			<br /><br />
+							<td>Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. A</td>
 
-			<table>
-				<thead>
-					<tr>
-						<th>Table Header</th>
-						<th>Table Header</th>
-						<th>Table Header</th>
-						<th>Table Header</th>
-					</tr>
-				</thead>
+						</tr>
+					</tbody>
+				</table>
 
-				<tbody>
-					<tr>
-						<td>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. </td>
-						
-						<td>Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. A</td>
-						
-						<td>Vestibulum posuere nulla eget wisi. Integer volutpat ligula eget enim. Suspendisse vitae arcu. Quisque pellentesque. Nullam consequat, sem vitae rhoncus tristique, mauris nulla fermentum est, bibendum ullamcorper sapien magna et quam. Sed dapibus vehicula odio. </td>
-						
-						<td>Proin bibendum gravida nisl. Fusce lorem. Phasellus sagittis, nulla in hendrerit laoreet, libero lacus feugiat urna, eget hendrerit pede magna vitae lorem. Praesent mauris.</td>
-					</tr>
-				</tbody>
-			</table>
+				<br /><br />
 
-		</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Table Header</th>
+							<th>Table Header</th>
+							<th>Table Header</th>
+							<th>Table Header</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. </td>
+
+							<td>Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. A</td>
+
+							<td>Vestibulum posuere nulla eget wisi. Integer volutpat ligula eget enim. Suspendisse vitae arcu. Quisque pellentesque. Nullam consequat, sem vitae rhoncus tristique, mauris nulla fermentum est, bibendum ullamcorper sapien magna et quam. Sed dapibus vehicula odio. </td>
+
+							<td>Proin bibendum gravida nisl. Fusce lorem. Phasellus sagittis, nulla in hendrerit laoreet, libero lacus feugiat urna, eget hendrerit pede magna vitae lorem. Praesent mauris.</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
 
 
-		<div class="sg-sub">Social Media</div>
-		<div class="sg-block">
+			<div class="sg-sub">Social Media</div>
+			<div class="sg-block">
 
-			<a href="" class="social-link facebook">Facebook</a>
-			<a href="" class="social-link twitter">Twitter</a>
-			<a href="" class="social-link google">Google +</a>
-			<a href="" class="social-link pinterest">Pinterest</a>
+				<a href="" class="social-link facebook">Facebook</a>
+				<a href="" class="social-link twitter">Twitter</a>
+				<a href="" class="social-link google">Google +</a>
+				<a href="" class="social-link pinterest">Pinterest</a>
 
+			</div>
 		</div>
 	</div>
-</div>

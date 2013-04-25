@@ -7,85 +7,92 @@
 <!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-	<title><?=$title?></title>
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<meta name="description" content="<?=$description?>" />	
-	<meta name="keywords" content="<?=$keywords?>" />
-	<meta name="revisit-after" content="14 days" />
-	<meta name="robots" content="all" />
-	<meta name="generator" content="http://www.propeller.uk.com" />
-	<meta name="author" content="propeller communications" />
+	<head>
+		<meta charset="utf-8">
+		<title><?= $title ?></title>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta name="description" content="<?= $description ?>" />
+		<meta name="keywords" content="<?= $keywords ?>" />
+		<meta name="revisit-after" content="14 days" />
+		<meta name="robots" content="all" />
+		<meta name="generator" content="http://www.propeller.uk.com" />
+		<meta name="author" content="propeller communications" />
 
-	<!-- Mobile viewport optimized: h5bp.com/viewport -->
-	<meta name="viewport" content="width=device-width">
+		<!-- Mobile viewport optimized: h5bp.com/viewport -->
+		<!--
+		////////////////////////////////////////////////////////////////////////
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+		UNCOMMENT THE NEXT LINE (viewport declaration) IF BUILDING A RESPONSIVE WEBSITE
 
-	<link rel="stylesheet" href="/assets/css/style.css">
+		////////////////////////////////////////////////////////////////////////
+		-->
+		<!--<meta name="viewport" content="width=device-width">-->
 
-	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-	<!-- All JavaScript at the bottom, except this Modernizr build.
-	Modernizr enables HTML5 elements & feature detects for optimal performance.
-	Create your own custom Modernizr build: www.modernizr.com/download/ -->
-	<script src="/assets/js/vendor/modernizr-2.5.0.min.js"></script>
-</head>
+		<link rel="stylesheet" href="/assets/css/style.css">
 
-<body id="<?=$page; ?>">
+		<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-	<div class="container">
-	    <header class="header">
-			<h1>Two Day Build</h1>
-	    </header>
-	     
-	    <nav>	
-		</nav>
+		<!-- All JavaScript at the bottom, except this Modernizr build.
+		Modernizr enables HTML5 elements & feature detects for optimal performance.
+		Create your own custom Modernizr build: www.modernizr.com/download/ -->
+		<script src="/assets/js/vendor/modernizr.custom.js"></script>
+	</head>
 
-		<section role="main">
-			<?= $content ?>
-		</section><!-- End of main -->
+	<body id="<?= $page; ?>">
 
-		<footer>
-			<a href="http://www.propcom.co.uk"><img src="/assets/img/siteby.png" alt="Site by Propeller" width="109" height="23" /></a>
-		</footer>
+		<div class="container">
+			<header class="header">
+				<h1>Two Day Build</h1>
+			</header>
 
-	</div> <!-- end of main container -->
+			<nav>
+			</nav>
 
-	<!-- JavaScript at the bottom for fast page loading -->
+			<section role="main">
+				<?= $content ?>
+			</section><!-- End of main -->
 
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-	<script src="//ajax.googleapis.com/ajax/vendor/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
+			<footer>
+				<a href="http://www.propcom.co.uk"><img src="/assets/img/siteby.png" alt="Site by Propeller" width="109" height="23" /></a>
+			</footer>
 
-	<?php if ($page == "contact"): ?>
-		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<?php endif ?>
-	
-	<? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
-		<script src="/assets/js/lib/plugins.js"></script>
-		<script src="/assets/js/src/script.js"></script>
-	<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
-		<script src="/assets/js/scripts.js"></script>
-	<? ELSE: ?>
-		<script src="/assets/js/scripts.min.js"></script>
-	<? ENDIF; ?>
-	
+		</div> <!-- end of main container -->
 
+		<!-- JavaScript at the bottom for fast page loading -->
 
-	<!--[if lt IE 7 ]>
-	  <script src="/assets/js/vendor/dd_belatedpng.js"></script>
-	  <script defer="defer">DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-	<![endif]-->
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/vendor/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
 
-	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
-</body>
+		<?php if ($page == "contact"): ?>
+			<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<?php endif ?>
+
+		<? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
+			<script src="/assets/js/lib/plugins.js"></script>
+			<script src="/assets/js/lib/jquery.cycle.all.js"></script>
+			<script src="/assets/js/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+			<script src="/assets/js/lib/jquery.fancybox.pack.js"></script>
+			<script src="/assets/js/lib/ajax-forms.js"></script>
+			<script src="/assets/js/lib/stretcharmstrong.js"></script>
+			<script src="/assets/js/src/script.js"></script>
+
+			<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
+			<script src="/assets/js/scripts.js"></script>
+			<? ELSE: ?>
+			<script src="/assets/js/scripts.min.js"></script>
+		<? ENDIF; ?>
+		<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+		   mathiasbynens.be/notes/async-analytics-snippet -->
+		<script>
+			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview'<?= ($page == "page-not-found") ? ",'/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer" : "" ?>]];
+			(function(d, t) {
+				var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+				g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+				s.parentNode.insertBefore(g, s)
+			}(document, 'script'));
+		</script>
+	</body>
 </html>

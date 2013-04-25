@@ -1,3 +1,6 @@
+#sass
+/assets/.sass-cache/*
+
 # data dirs
 public/data
 fuel/app/data
