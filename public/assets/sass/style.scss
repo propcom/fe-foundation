@@ -30,6 +30,8 @@
 @import "modules/_gallery";
 @import "modules/_events";
 @import "modules/_transition";
+@import "modules/_code-guide";
+@import "modules/_menu";
 
 /*  States
 	Responsive files are to be named with
@@ -42,6 +44,7 @@
 */
 
 @import "state/_rwd";
+@import "state/_state";
 
 /*  Libs
 	This is any CSS that has come from a plugin.

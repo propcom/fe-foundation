@@ -1286,6 +1286,37 @@ div.transition {
   position: relative;
 }
 
+/*
+	Code guide
+
+	These styles are only for the code guide.
+	they will not appear anywhere else on the site.
+*/
+/* line 12, ../sass/modules/_code-guide.scss */
+#code-guide .hidden-code {
+  display: none;
+}
+/* line 15, ../sass/modules/_code-guide.scss */
+#code-guide h1 {
+  padding-top: 60px;
+}
+/* line 18, ../sass/modules/_code-guide.scss */
+#code-guide h2 {
+  padding-bottom: 30px;
+  color: #EA4824;
+}
+/* line 22, ../sass/modules/_code-guide.scss */
+#code-guide .go-fancybox {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #EA4824;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #000000 !important;
+}
+
+/*  Menus  */
 /*  States
 	Responsive files are to be named with
 	their viewports.

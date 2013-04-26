@@ -1,0 +1,33 @@
+/*
+	Code guide
+
+	These styles are only for the code guide.
+	they will not appear anywhere else on the site.
+*/
+
+
+
+
+#code-guide{
+	.hidden-code{
+		display:none;
+	}
+	h1{
+		padding-top: 60px;
+	}
+	h2{
+		padding-bottom: 30px;
+		color:#EA4824;
+	}
+	.go-fancybox{
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		background-color: #EA4824;
+		padding: 5px 10px;
+		text-align: center;
+		text-decoration: none;
+		color: #000000 !important;
+
+	}
+
+}

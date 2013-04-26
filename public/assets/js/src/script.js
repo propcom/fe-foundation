@@ -57,13 +57,13 @@ jQuery(function($) {
 		fit: 1
 	});
 
-	// Gallery & EventsFancyBox
-	$('.gallery li a, .events ul li a').fancybox();
+	// Gallery, Events & code guide FancyBox
+	$('.gallery li a, .events ul li a, .go-fancybox').fancybox();
+
 
 	//Forms
 
 	//signup
-
 	$('#signup-form').ajaxform({
 		error_location: 'input', // input, label or tooltip
 		show_alert: true,
@@ -74,7 +74,7 @@ jQuery(function($) {
 			alert("This is a callback for when the form fails server validation!");
 		}
 	});
-
+	//contact
 	$('#contact-form').ajaxform({
 		error_location: 'input', // input, label or tooltip
 		show_alert: true,
@@ -85,7 +85,7 @@ jQuery(function($) {
 			alert("This is a callback for when the form fails server validation!");
 		}
 	});
-
+	//booking
 	$('#booking-form').ajaxform({
 		error_location: 'input', // input, label or tooltip
 		show_alert: true,

@@ -38,6 +38,37 @@
 		Modernizr enables HTML5 elements & feature detects for optimal performance.
 		Create your own custom Modernizr build: www.modernizr.com/download/ -->
 		<script src="/assets/js/vendor/modernizr.custom.js"></script>
+		<script src="/assets/js/vendor/conditionizr.min.js"></script>
+		<script>
+			conditionizr({
+				debug: false,
+				scriptSrc: '/assets/conditionizr/js/',
+				styleSrc: '/assets/conditionizr/css/',
+				ieLessThan: {
+					active: true,
+					version: '8',
+					scripts: false,
+					styles: false,
+					classes: true,
+					customScript: "/assets/conditionizr/ie6/warning.js"
+				},
+				chrome: {scripts: false, styles: false, classes: false, customScript: false},
+				safari: {scripts: false, styles: false, classes: false, customScript: false},
+				opera: {scripts: false, styles: false, classes: false, customScript: false},
+				firefox: {scripts: false, styles: false, classes: false, customScript: false},
+				ie10: {scripts: false, styles: false, classes: false, customScript: false},
+				ie9: {scripts: false, styles: false, classes: false, customScript: false},
+				ie8: {scripts: false, styles: false, classes: false, customScript: false},
+				ie7: {scripts: true, styles: true, classes: true, customScript: false},
+				retina: {scripts: false, styles: false, classes: false, customScript: false},
+				touch: {scripts: false, styles: false, classes: false, customScript: false},
+				mac: true,
+				win: true,
+				x11: true,
+				linux: true
+			});
+
+		</script>
 	</head>
 
 	<body id="<?= $page; ?>">
@@ -63,8 +94,8 @@
 		<!-- JavaScript at the bottom for fast page loading -->
 
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-		<script src="//ajax.googleapis.com/ajax/vendor/jquery/1.7.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 
 		<?php if ($page == "contact"): ?>
 			<script src="http://maps.google.com/maps/api/js?sensor=true"></script>

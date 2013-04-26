@@ -1,24 +1,31 @@
 <?php
 
 class Controller_Static extends Controller_Template {
+
 	public function before() {
 		$this->uri_segments = Request::main()->uri->get_segments();
 
 		// Determine if we need to use a template (other than the default one)
-		if ($this->uri_segments and is_file(APPPATH.'views/'.$this->uri_segments[0].'/template.php')) {
-			$this->template = $this->uri_segments[0].'/template';
+		if ($this->uri_segments and is_file(APPPATH . 'views/' . $this->uri_segments[0] . '/template.php')) {
+			$this->template = $this->uri_segments[0] . '/template';
 		}
 
 		parent::before();
 	}
-	
+
 	public function action_index() {
 		try {
+			//check for code-guide
+
+			if (in_array('code-guide', $this->uri_segments) && Fuel::$env !== Fuel::DEVELOPMENT) {
+				throw new HttpNotFoundException;
+			}
+
+
 			// Get the URI and set the title
 			if (($uri = implode('/', $this->uri_segments))) {
 				\View::set_global('title', ucwords(str_replace('-', ' ', $uri)));
-			}
-			else {
+			} else {
 				\View::set_global('title', '');
 				$uri = 'index';
 			}
@@ -29,7 +36,7 @@ class Controller_Static extends Controller_Template {
 			}
 			// Load the view with /index on the end if it failed
 			catch (Exception $e) {
-				$uri = $uri.'/index';
+				$uri = $uri . '/index';
 				$this->template->content = \View::forge($uri); // Try default index
 			}
 
@@ -50,14 +57,16 @@ class Controller_Static extends Controller_Template {
 			return \Response::forge($this->template->content);
 		}
 	}
-	
+
 	public function after($response) {
 		// Try to load inc/meta. This isn't a great way to do meta data but it keeps things simple for frontenders
 		try {
 			\View::forge('inc/meta')->render();
+		} catch (Exception $e) {
+
 		}
-		catch (Exception $e) {}
-		
+
 		return parent::after($response);
 	}
+
 }
