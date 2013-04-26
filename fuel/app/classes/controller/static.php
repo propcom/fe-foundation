@@ -15,13 +15,6 @@ class Controller_Static extends Controller_Template {
 
 	public function action_index() {
 		try {
-			//check for code-guide
-
-			if (in_array('code-guide', $this->uri_segments) && Fuel::$env !== Fuel::DEVELOPMENT) {
-				throw new HttpNotFoundException;
-			}
-
-
 			// Get the URI and set the title
 			if (($uri = implode('/', $this->uri_segments))) {
 				\View::set_global('title', ucwords(str_replace('-', ' ', $uri)));
@@ -56,6 +49,12 @@ class Controller_Static extends Controller_Template {
 			$this->auto_render = false;
 			return \Response::forge($this->template->content);
 		}
+	}
+
+	public function action_404() {
+		View::set_global('page', 'page-not-found');
+		$this->template->content = \View::forge('404');
+		return \Response::forge($this->template, 404);
 	}
 
 	public function after($response) {
