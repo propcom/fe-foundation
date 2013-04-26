@@ -1,5 +1,6 @@
 #sass
 /assets/.sass-cache/*
+/assets/css/style.css
 
 # data dirs
 public/data
