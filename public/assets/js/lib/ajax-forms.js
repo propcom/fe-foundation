@@ -1,7 +1,7 @@
 
 /*
 	ajaxform: Anthony Armstrong
-		version: 2.0.5
+		version: 2.0.7
 		last modified: 2013-04-24
 */
 
@@ -143,7 +143,9 @@
 			
 			// callback if there are no errors
 			if (this.val_res.error_count == 0) {
-				callback();
+				if (callback != undefined) {
+					callback();
+				}
 			} else {
 
 				// do some voodoo to show errors
@@ -324,9 +326,9 @@
 			  		// set reponse global
 			  		instance.response = true;
 
-			  		var welcomeText = form_handle.parent().find('p.welcomeText');
-			  		var success_text = $(data).find('p.successText');
-			  		var error_text = $(data).find('p.errorText');
+			  		var welcomeText = form_handle.parent().find('.welcomeText');
+			  		var success_text = $(data).find('.successText');
+			  		var error_text = $(data).find('.errorText');
 			  		var form_wrapper = form_handle.parent().attr('id');
 
 			  		// all good server side
@@ -336,7 +338,7 @@
 			  			form_handle.fadeTo(300, 0, function() {
 
 			  				// show the success text
-			  				form_handle.parents('div#' + form_wrapper).html(success_text.fadeTo(300, 1));
+			  				form_handle.parents('#' + form_wrapper).html(success_text.fadeTo(300, 1));
 			  				form_handle.remove();
 
 			  				if (form_instance.settings.form_success != null) {
@@ -360,7 +362,7 @@
 			  				var error_form = $(data).find('#' + form_instance.handle.attr('id'));
 			  				
 			  				// show the returned form
-							form_handle.parents('div#' + form_wrapper).html(error_form.fadeTo(300, 1, function() {
+							form_handle.parents('#' + form_wrapper).html(error_form.fadeTo(300, 1, function() {
 								// insert the error text
 			  					error_text.insertBefore(error_form);
 							}));
@@ -371,7 +373,7 @@
 							form_instance.handle = error_form;
 
 							// find all fields with errors
-							var bad_fields = error_form.find('div.error input');
+							var bad_fields = error_form.find('.error input');
 
 							// build list of errornous fields
 							bad_fields.each(function() {
@@ -489,7 +491,7 @@
 							case 'label' :
 
 								// get handle on label
-								var label = $(this).parents('div.field-wrap').find('label.error');
+								var label = $(this).parents('.field-wrap').find('label.error');
 
 								// remove error class from label
 								label.removeClass('error');
@@ -499,7 +501,7 @@
 							case 'tooltip' :
 
 								// is there an error element?
-								var error_element = $(this).parents('div.field-wrap').find('label.error-tooltip');
+								var error_element = $(this).parents('.field-wrap').find('label.error-tooltip');
 								if (error_element.size() > 0) {
 
 									// remove it
