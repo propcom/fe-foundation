@@ -1,6 +1,6 @@
 # data dirs
-/public/data/*
-/fuel/app/data/*
+/public/data
+/fuel/app/data
 
 # Standard FuelPHP ignores
 /fuel/app/logs/*
