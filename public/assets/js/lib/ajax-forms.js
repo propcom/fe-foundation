@@ -1,7 +1,7 @@
 
 /*
 	ajaxform: Anthony Armstrong
-		version: 2.0.7
+		version: 2.0.9
 		last modified: 2013-04-24
 */
 
@@ -306,11 +306,16 @@
 			var serialized = form_instance.handle.serialize();
 			serialized += '&submitted=Send';
 
+			var action = form_instance.settings.single_page_site ? window.location.protocol + '//' + window.location.host : window.location.href;
+
 			$.ajax({
-				url: window.location.href,
+				url: action,
 				dataType: 'html',
 				data: serialized,
 				type: 'POST',
+				error : function(data) {
+					$.error('Ajax request has failed! Status: '+ data.status + ', status text: ' + data.statusText);
+				},
 				beforeSend: function() {
 
 					// lock form and show loading text
@@ -450,6 +455,7 @@
 		    instance.settings = $.extend({
 		    	error_location   : 'input',
 		    	show_alert       : false,
+		    	single_page_site : false,
 		    	form_success     : function() {},
 		    	form_failure     : function() {}
 		    }, options);
