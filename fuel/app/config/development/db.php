@@ -4,9 +4,11 @@
 die("Set up your DB in fuel/app/config/development/db.php!");
 
 return [
-	[
-		'dsn' => 'mysql:host=localhost;dbname=dbname',
-		'username' => 'username',
-		'password' => 'password',
+	'default' => [
+		'connection' => [
+			'dsn' => 'mysql:host=localhost;dbname=dbname',
+			'username' => 'username',
+			'password' => 'password',
+		],
 	],
 ];
