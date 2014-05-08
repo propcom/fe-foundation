@@ -1,8 +1,12 @@
 /*  Headers  */
 
 h1, .alpha-header{
-	font-size: 2.5em;
-	line-height: 1.125em;
+	text-transform: uppercase;
+	@include font-size(72);
+	padding-bottom: 40px;
+	@include mq($mobular) {
+		@include font-size(42);
+	}
 }
 
 h2, .beta-header{

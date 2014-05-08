@@ -1,8 +1,46 @@
 /*  Base Styling for site  */
 
-body{
+html {
+	font-size: $basefs; 
+}
+
+body {
 	background: #fff;
 	font-family: "Trebuchet MS", arial, sans-serif;
-	font-size: 18px;
+	font-size: $basefs;
 	line-height: 24px;
+}
+
+.container {
+	max-width: 960px;
+	padding: 0 10px;
+	margin: 0 auto;
+	&.container--centre {
+		text-align: center;
+	}
+}
+
+* {
+	@include box-sizing(border-box);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing:antialiased;
+  	font-smoothing:antialiased;
+  	text-rendering:optimizeLegibility;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(30, 176, 172);
+}
+
+.header--main {
+	text-align: center;
+	background: #eeeeee;
+	padding: 60px 0 0 0;
+	margin-bottom: 40px;
 }
