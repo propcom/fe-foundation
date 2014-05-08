@@ -1,6 +1,3 @@
-/* Author:
-
- */
 
 function initialize() {
 	var latlng = new google.maps.LatLng(51.4926406357673, -0.14077541993339);
@@ -28,73 +25,47 @@ function initialize() {
 }
 
 jQuery(function($) {
+
 	if ($('#contact').size() > 0) {
 		initialize();
-	} else {
-		var slides = $('div.transition');
-		// StrechArmstrong
-		slides.stretcharmstrong({
-			'rotate': true,
-			'rotate_interval': 5000,
-			'transition': {
-				'type': 'fade',
-				'duration': 3000,
-				'orientation': 'horizontal'
-			},
-			'element': 'img',
-			'resize': false,
-			'background': false,
-			'ajax': '/background/images.json?p=' + $('body').attr('id')
-		});
-
 	}
-
-
-	//Twitter Feed
-	$('.twitter').cycle({
-		fx: 'scrollUp',
-		pause: 1,
-		fit: 1
-	});
-
-	// Gallery, Events & code guide FancyBox
-	$('.gallery li a, .events ul li a, .go-fancybox').fancybox();
-
 
 	//Forms
 
-	//signup
-	$('#signup-form').ajaxform({
-		error_location: 'input', // input, label or tooltip
-		show_alert: true,
-		form_success: function() {
-			alert("This is a callback for when the form passes server validation successfully!");
-		},
-		form_failure: function() {
-			alert("This is a callback for when the form fails server validation!");
-		}
-	});
-	//contact
-	$('#contact-form').ajaxform({
-		error_location: 'input', // input, label or tooltip
-		show_alert: true,
-		form_success: function() {
-			alert("This is a callback for when the form passes server validation successfully!");
-		},
-		form_failure: function() {
-			alert("This is a callback for when the form fails server validation!");
-		}
-	});
-	//booking
-	$('#booking-form').ajaxform({
-		error_location: 'input', // input, label or tooltip
-		show_alert: true,
-		form_success: function() {
-			alert("This is a callback for when the form passes server validation successfully!");
-		},
-		form_failure: function() {
-			alert("This is a callback for when the form fails server validation!");
-		}
-	});
+		//signup
+		$('#signup-form').ajaxform({
+			error_location: 'input', // input, label or tooltip
+			show_alert: true,
+			form_success: function() {
+				alert("This is a callback for when the form passes server validation successfully!");
+			},
+			form_failure: function() {
+				alert("This is a callback for when the form fails server validation!");
+			}
+		});
+
+		//contact
+		$('#contact-form').ajaxform({
+			error_location: 'input', // input, label or tooltip
+			show_alert: true,
+			form_success: function() {
+				alert("This is a callback for when the form passes server validation successfully!");
+			},
+			form_failure: function() {
+				alert("This is a callback for when the form fails server validation!");
+			}
+		});
+
+		//booking
+		$('#booking-form').ajaxform({
+			error_location: 'input', // input, label or tooltip
+			show_alert: true,
+			form_success: function() {
+				alert("This is a callback for when the form passes server validation successfully!");
+			},
+			form_failure: function() {
+				alert("This is a callback for when the form fails server validation!");
+			}
+		});
 
 });
