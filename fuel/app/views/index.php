@@ -31,7 +31,5 @@
 			</li>
 		</ul>
 
-		<? include ('inc/contact-form.php'); ?>
-
 	</section>
 
