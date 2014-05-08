@@ -14,13 +14,13 @@ return array (
 
 	'site_email' => 'brett.chisholm@propcom.co.uk',
 
-	'phone' => '077777777777',
+	'phone' => 'xxx',
 
 	'analytics' => 'UA-XXXXX-X',
 
-	'siteid' => '123',
+	'siteid' => 'xxx',
 
-	'sitename' => "Brett's - awesome site",
+	'sitename' => "My awesome site",
 
 	'twitter' => "PropellerComms"
 

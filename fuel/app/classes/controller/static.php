@@ -43,19 +43,14 @@ class Controller_Static extends Controller_Template {
 			\Config::load('site', true);
 
 			// set global vars
-			// TO DO: is there a better way of doing this?
-			$site_email = \Config::get('site.site_email');
-			\View::set_global('site_email', $site_email);
-			$siteid = \Config::get('site.siteid');
-			\View::set_global('siteid', $siteid);
-			$analytics = \Config::get('site.analytics');
-			\View::set_global('analytics', $analytics);
-			$phone = \Config::get('site.phone');
-			\View::set_global('phone', $phone);
-			$sitename = \Config::get('site.sitename');
-			\View::set_global('sitename', $sitename, false);
-			$twitter = \Config::get('site.twitter');
-			\View::set_global('twitter', $twitter);
+			View::set_global(array(
+			    'siteid' => \Config::get('site.siteid'),
+			    'site_email' => \Config::get('site.site_email'),
+			    'analytics' => \Config::get('site.analytics'),
+			    'phone' => \Config::get('site.phone'),
+			    'sitename' => \Config::get('site.sitename'),
+			    'twitter' => \Config::get('site.twitter'),
+			), null, true);
 
 		}
 		// 404 if an above request fails
