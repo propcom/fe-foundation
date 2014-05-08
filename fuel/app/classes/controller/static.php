@@ -43,6 +43,7 @@ class Controller_Static extends Controller_Template {
 			\Config::load('site', true);
 
 			// set global vars
+			// TO DO: is there a better way of doing this?
 			$site_email = \Config::get('site.site_email');
 			\View::set_global('site_email', $site_email);
 			$siteid = \Config::get('site.siteid');
