@@ -1,0 +1,49 @@
+
+	// media Queries
+	@mixin mq($px, $query1: max, $query2: width) {
+		@media screen and (#{$query1}-#{$query2}: $px) {
+			@content;
+		}
+	}
+	
+	// main font size
+	$basefs: 12px;
+
+	// px to rem for font-sizes and line-height
+	@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5){
+	  font-size: ($sizeValue * 1) + px;
+	  line-height: ($line * 1) + px;
+	  font-size: ($sizeValue / 12) + rem;
+	  line-height: ($line / 12) + rem;
+	}
+
+	// common breakpoints
+	$tablet : 840px;
+	$mobular : 620px;
+
+	// accelerate all the hardware for smoothers css transtions and transforms
+	@mixin hardwareAccelerate {
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-perspective: 1000;
+	  -webkit-backface-visibility: hidden;
+
+	  -moz-transform: translate3d(0,0,0);
+	  -moz-perspective: 1000;
+	  -moz-backface-visibility: hidden;
+
+	  -ms-transform: translate3d(0,0,0);
+	  -ms-perspective: 1000;
+	  -ms-backface-visibility: hidden;
+
+	  transform: translate3d(0,0,0);
+	  perspective: 1000;
+	  backface-visibility: hidden;
+	}
+	
+	// cross browser opacity
+	@mixin opacity ($value)  {
+	  $ms_opacity : $value * 100;
+	    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(#{$ms_opacity})";
+	    filter: alpha(opacity=#{$ms_opacity});
+	    opacity: $value;
+	}   

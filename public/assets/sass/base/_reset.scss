@@ -113,45 +113,6 @@ a:active {
 }
 
 
-/* =============================================================================
-   Typography
-   ========================================================================== */
-
-/*
- * Addresses font sizes and margins set differently in IE6/7
- * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-h3 {
-  font-size: 1.17em;
-  margin: 0;
-}
-
-h4 {
-  font-size: 1em;
-  margin: 0;
-}
-
-h5 {
-  font-size: 0.83em;
-  margin: 0;
-}
-
-h6 {
-  font-size: 0.75em;
-  margin: 0;
-}
-
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
@@ -500,3 +461,200 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+// Additional Resets
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+hr {
+  display: block;
+  margin: 0 0 1.4118em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+sub, sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 65%;
+  line-height: 0;
+  font-weight:400;
+}
+sup {
+  top: -0.7em;
+}
+sub {
+  bottom: -0.3em;
+}
+dd {
+  margin: 0 0 0 2.5em;
+}
+menu, ol, ul {
+  padding: 0 0 0 1.5em;
+}
+ol ol {
+  list-style-type: lower-alpha;
+}
+ol ol ol {
+  list-style-type: lower-roman;
+}
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure, form {
+  margin: 0;
+}
+legend {
+  padding: 0;
+  border: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+#{$all-text-inputs}, textarea {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+textarea {
+  resize: vertical;
+}
+.chromeframe {
+  margin: .2em 0;
+  padding: .2em 0;
+  background: #ccc;
+}
+
+th::selection {
+  background: transparent;
+  color: inherit;
+}
+th::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
+table {
+    max-width: 100%;
+    background-color: transparent;
+}
+th[data-sort] {
+    cursor:pointer;
+}
+th[data-sort]:after{
+    padding-left:12px;
+    content:"b";
+    font-size:14px;
+    font-family:"iconfont";
+}
+
+th[data-sort].sorting-asc:after {
+    content:"[";
+}
+
+th[data-sort].sorting-desc:after {
+    content:"]";
+}
+.table {
+    margin-bottom: 1.625em;
+    width: 100%;
+}
+
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th,
+.table thead > tr > td,
+.table tbody > tr > td,
+.table tfoot > tr > td {
+    padding: 8px;
+    border-top: 1px solid #dddddd;
+    vertical-align: top;
+    line-height: 26px;
+}
+
+.table tbody > tr:hover {
+    background:rgba(0, 255, 0, 0.05);
+}
+
+
+@include mq(767px) {
+  .table thead > tr > th,
+  .table tbody > tr > th,
+  .table tfoot > tr > th,
+  .table thead > tr > td,
+  .table tbody > tr > td,
+  .table tfoot > tr > td {
+      padding: 8px;
+      border-top: 1px solid #dddddd;
+      vertical-align: top;
+      line-height: 22px;
+  }
+}
+
+.table thead > tr > th {
+    border-bottom: 2px solid #dddddd;
+    vertical-align: bottom;
+    text-align:left;
+}
+
+.table caption + thead tr:first-child th,
+.table colgroup + thead tr:first-child th,
+.table thead:first-child tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dddddd;
+}
+
+.table .table {
+    background-color: #ffffff;
+}
+
+
+
