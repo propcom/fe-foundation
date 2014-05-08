@@ -1,18 +1,22 @@
 /*  SASS imports  */
 
+/*  Libs
+	This is any CSS that has come from a plugin.
+	Such as fancybox, pretty photo, etc.
+*/
+
+@import "lib/_bourbon";
+
 /* Base */
 
 @import "base/_variables";
-@import "base/_normalize";
+@import "base/_reset";
 @import "base/_base";
 @import "base/_typography";
 
-/*  Layout
-	For different page layouts on the
-	site just create new files in order
-	to make it easily managable.
-	ie.
-		_blog.scss
+/*  Site
+	Your site styles for your
+	layout, header and footer
 */
 
 @import "site/_site";
@@ -21,7 +25,7 @@
 
 /*  Modules
 	Write all the modular SCSS.
-	Divide everything up in here, doesnt matter hoe
+	Divide everything up in here, doesnt matter how
 	many files as it will all be compressed when live.
 */
 
@@ -29,16 +33,10 @@
 @import "modules/_forms";
 
 /*  Pages
-	Page specific modules 
+	Page specific css 
 	These are for pages which may require a lot 
 	of page specific styles
 */
 
 // e.g. @import "modules/_meet-the-team";
 
-/*  Libs
-	This is any CSS that has come from a plugin.
-	Suach as fancybox, pretty photo, etc.
-*/
-
-@import "lib/_bourbon"
