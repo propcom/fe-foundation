@@ -1,11 +1,12 @@
 /*  SASS imports  */
 
 /* Base */
+
 @import "base/_variables";
 @import "base/_normalize";
 @import "base/_base";
 @import "base/_typography";
-@import "base/_fancybox";
+
 /*  Layout
 	For different page layouts on the
 	site just create new files in order
@@ -14,8 +15,9 @@
 		_blog.scss
 */
 
-@import "layout/_skeleton";
-@import "layout/_site";
+@import "site/_site";
+@import "site/_header";
+@import "site/_footer";
 
 /*  Modules
 	Write all the modular SCSS.
@@ -23,28 +25,16 @@
 	many files as it will all be compressed when live.
 */
 
-@import "modules/_style-guide"; /* This only contains hte styling for the SG headers. Nothing else to be in here. */
 @import "modules/_elements";
 @import "modules/_forms";
-@import "modules/_twitter-feed";
-@import "modules/_gallery";
-@import "modules/_events";
-@import "modules/_transition";
-@import "modules/_code-guide";
-@import "modules/_menu";
 
-/*  States
-	Responsive files are to be named with
-	their viewports.
-	ie:
-
-		_480-down.scss
-		_480-up.scss
-		_480-960.scss
+/*  Pages
+	Page specific modules 
+	These are for pages which may require a lot 
+	of page specific styles
 */
 
-@import "state/_rwd";
-@import "state/_state";
+// e.g. @import "modules/_meet-the-team";
 
 /*  Libs
 	This is any CSS that has come from a plugin.
