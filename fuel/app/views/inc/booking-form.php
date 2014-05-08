@@ -8,7 +8,7 @@ $fh = $multiForms[$multiFormName];
 
 /* Step 1b: Set site id */
 
-$siteId = 3;
+$siteId = $siteid;
 
 /* Step 2: Set which fields you want to be required */
 
@@ -37,12 +37,12 @@ $sendEmail = true;
 
 /* Step 3a: If sending an email, set email subject and from & to addresses */
 
-$email->setSubject('Signup from //INSERT SITE NAME//');
+$email->setSubject($sitename);
 
-$email->setFromEmail('whoops@propcom.co.uk'); // Email is sent 'from' this address
-$email->setFromName('//INSERT SITE NAME//');	// "Friendly" name emails are sent from (usually "<pubname> Website")
+$email->setFromEmail($site_email); // Email is sent 'from' this address
+$email->setFromName($sitename); // "Friendly" name emails are sent from (usually "<pubname> Website")
 
-$email->addRecipient('anthony.armstrong@propcom.co.uk');
+$email->addRecipient($site_email);
 //$email->addRecipient('ruth.nachum@propcom.co.uk');		// Add a recipient to the email
 //$email->addBccRecipient('andy-signups@propcomm.co.uk');	// Add a bcc to the email (remove the // at the start to enable a line)
 //$email->addBccRecipient('john@propcomm.co.uk');
