@@ -14,6 +14,7 @@ class Controller_Static extends Controller_Template {
 	}
 
 	public function action_index() {
+
 		try {
 			// Get the URI and set the title
 			if (($uri = implode('/', $this->uri_segments))) {
@@ -37,6 +38,24 @@ class Controller_Static extends Controller_Template {
 			$page = str_replace('/', '-', $uri);
 			// Set the page into the view
 			View::set_global('page', $page);
+
+			// load site config
+			\Config::load('site', true);
+
+			// set global vars
+			$site_email = \Config::get('site.site_email');
+			\View::set_global('site_email', $site_email);
+			$siteid = \Config::get('site.siteid');
+			\View::set_global('siteid', $siteid);
+			$analytics = \Config::get('site.analytics');
+			\View::set_global('analytics', $analytics);
+			$phone = \Config::get('site.phone');
+			\View::set_global('phone', $phone);
+			$sitename = \Config::get('site.sitename');
+			\View::set_global('sitename', $sitename, false);
+			$twitter = \Config::get('site.twitter');
+			\View::set_global('twitter', $twitter);
+
 		}
 		// 404 if an above request fails
 		catch (Exception $e) {
@@ -49,6 +68,7 @@ class Controller_Static extends Controller_Template {
 			$this->auto_render = false;
 			return \Response::forge($this->template->content);
 		}
+
 	}
 
 	public function action_404() {
