@@ -13,14 +13,16 @@
 		<meta name="robots" content="all" />
 		<meta name="generator" content="http://www.propeller.uk.com" />
 		<meta name="author" content="Propeller Communications" />
+		<link rel="canonical" href="<? $siteurl ?>" />
 
-		<!-- UNCOMMENT THE NEXT LINE (viewport declaration) IF BUILDING A RESPONSIVE WEBSITE OTHERWISE DELETE!!-->
-
-		<!--<meta name="viewport" content="width=device-width">-->
+		<? if ($responsive == 'true') : ?>
+			<meta name="viewport" content="width=device-width">
+		<? endif  ?>
 
 		<link rel="stylesheet" href="/assets/css/style.css">
 
 		<script src="/assets/js/vendor/modernizr.custom.js"></script>
+		<script src="/assets/js/vendor/conditionizr.min.js"></script>		
 
 	</head>
 
@@ -45,18 +47,17 @@
 
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1min.js.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
 		<?php if ($page == "contact"): ?>
 			<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 		<?php endif ?>
 
 		<? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
-			<script src="/assets/js/vendor/conditionizr.min.js"></script>
 			<script src="/assets/js/vendor/conditionizr-init.js"></script>
-			<script src="/assets/js/vendor/forms.js"></script>
 			<script src="/assets/js/lib/plugins.js"></script>
-			<script src="/assets/js/lib/ajax-forms.js"></script>
+			<script src="/assets/js/modules/forms.js"></script>
+			<script src="/assets/js/modules/ajax-forms.js"></script>
 			<script src="/assets/js/src/script.js"></script>
 
 			<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
@@ -66,7 +67,7 @@
 		<? ENDIF; ?>
 
 		<script>
-			var _gaq = [['_setAccount', '<?=$analytics?>'], ['_trackPageview'<?= ($page == "page-not-found") ? ",'/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer" : "" ?>]];
+			var _ga = [['_setAccount', '<?=$analytics?>'], ['_trackPageview'<?= ($page == "page-not-found") ? ",'/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer" : "" ?>]];
 			(function(d, t) {
 				var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 				g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';

@@ -22,6 +22,9 @@ return array (
 
 	'sitename' => "My awesome site",
 
-	'twitter' => "PropellerComms"
+	'twitter' => "PropellerComms",
+
+	// define true of false
+	'responsive' => 'false'
 
 );
