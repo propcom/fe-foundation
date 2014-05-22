@@ -37,10 +37,8 @@ jQuery(function($) {
 			error_location: 'input', // input, label or tooltip
 			show_alert: true,
 			form_success: function() {
-				alert("This is a callback for when the form passes server validation successfully!");
 			},
 			form_failure: function() {
-				alert("This is a callback for when the form fails server validation!");
 			}
 		});
 
@@ -49,10 +47,8 @@ jQuery(function($) {
 			error_location: 'input', // input, label or tooltip
 			show_alert: true,
 			form_success: function() {
-				alert("This is a callback for when the form passes server validation successfully!");
 			},
 			form_failure: function() {
-				alert("This is a callback for when the form fails server validation!");
 			}
 		});
 
@@ -61,10 +57,8 @@ jQuery(function($) {
 			error_location: 'input', // input, label or tooltip
 			show_alert: true,
 			form_success: function() {
-				alert("This is a callback for when the form passes server validation successfully!");
 			},
 			form_failure: function() {
-				alert("This is a callback for when the form fails server validation!");
 			}
 		});
 
