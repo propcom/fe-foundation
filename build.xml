@@ -50,7 +50,9 @@
             <fileset dir="${js.path}/lib/">
                 <include name="*.js" />
             </fileset>
-
+            <fileset dir="${js.path}/modules/">
+                <include name="*.js" />
+            </fileset>
             <fileset dir="${js.path}/src/">
                 <include name="*.js" />
             </fileset>
