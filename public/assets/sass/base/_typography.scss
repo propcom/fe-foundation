@@ -3,7 +3,6 @@
 h1, .alpha-header{
 	text-transform: uppercase;
 	@include font-size(72);
-	padding-bottom: 40px;
 	@include mq($mobular) {
 		@include font-size(42);
 	}

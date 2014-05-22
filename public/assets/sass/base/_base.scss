@@ -22,11 +22,10 @@ body {
 
 * {
 	@include box-sizing(border-box);
-	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing:antialiased;
-  	font-smoothing:antialiased;
-  	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+  	font-smoothing: antialiased;
+  	text-rendering: optimizeLegibility;
 }
 
 ul {
@@ -36,11 +35,4 @@ ul {
 a {
 	text-decoration: none;
 	color: rgb(30, 176, 172);
-}
-
-.header--main {
-	text-align: center;
-	background: #eeeeee;
-	padding: 60px 0 0 0;
-	margin-bottom: 40px;
 }
