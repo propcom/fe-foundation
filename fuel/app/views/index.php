@@ -1,4 +1,4 @@
-	
+
 	<section class="container container--centre">
 		<p>
 			Run sass from the assets Directory
@@ -31,6 +31,19 @@
 				<a href="http://sass-lang.com/guide" target="_blank">SASS</a>
 			</li>
 		</ul>
+
+
+		<?/*
+			ImagerJS Markup to add in place of your <img /> tags
+			- see http://bit.ly/1jKBi2H for implementation docs
+			- see main.js for instantiation
+		*/?>
+		<?/*
+
+		<div class="js-load-img" data-width="300" data-height="300" data-src="/assets/img/your-image.jpg" data-alt="Your ALT Attribute" data-class="scale-with-grid"></div>
+		<noscript><img src="/assets/img/your-image.jpg" height="300" width="300" alt="Your ALT Attribute" class="scale-with-grid"></noscript>
+
+		*/?>
 
 	</section>
 
