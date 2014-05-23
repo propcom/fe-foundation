@@ -26,5 +26,8 @@
 # ant generated assets
 .sass-cache
 /public/assets/css/style.css
+/public/assets/css/main.css
 /public/assets/js/scripts.js
 /public/assets/js/scripts.min.js
+/public/assets/js/main.js
+/public/assets/js/main.min.js
