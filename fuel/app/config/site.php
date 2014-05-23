@@ -14,7 +14,9 @@ return array (
 
 	'site_email' => 'brett.chisholm@propcom.co.uk',
 
-	'phone' => 'xxx',
+	'siteurl' => 'example.com',
+
+	'phone' => '00000000000',
 
 	'analytics' => 'UA-XXXXX-X',
 
@@ -24,7 +26,7 @@ return array (
 
 	'twitter' => "PropellerComms",
 
-	// define true of false
+	// define true or false
 	'responsive' => 'false'
 
 );
