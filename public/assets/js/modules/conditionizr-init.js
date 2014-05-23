@@ -28,6 +28,24 @@ conditionizr.add('opera', [], function () {
 });
 
 /*!
+ * IE6
+ * @cc_on Conditional Compilation to test the
+ * JavaScript version and MSIE 6 in the UserAgent
+ */
+conditionizr.add('ie6', [], function () {
+  return (Function('/*@cc_on return (@_jscript_version == 5.6 || (@_jscript_version == 5.7 && /MSIE 6\.0/i.test(navigator.userAgent))); @*/')());
+});
+
+/*!
+ * IE7
+ * @cc_on Conditional Compilation to test the
+ * JavaScript version and MSIE 7 in the UserAgent
+ */
+conditionizr.add('ie7', [], function () {
+  return (Function('/*@cc_on return (@_jscript_version == 5.7 && /MSIE 7\.0(?!.*IEMobile)/i.test(navigator.userAgent)); @*/')());
+});
+
+/*!
  * Conditionizr test: IE8
  */
 conditionizr.add('ie8', [], function () {
@@ -77,19 +95,40 @@ conditionizr.add('windows', [], function () {
     return /win/i.test(navigator.platform);
 });
 
-jQuery(function($) {
+/*!
+ * Mac
+ */
+conditionizr.add('mac', [], function () {
+    return /mac/i.test(navigator.platform);
+});
 
-    conditionizr.config({
-        assets: '/path/to/my/assets/',
-        tests: {
-            'firefox': ['class'],
-            'chrome': ['class'],
-            'touch': ['class'],
-            'ie11': ['class'],
-            'ie10': ['class'],
-            'ie9': ['class'],
-            'ie8': ['class'],
-        }
-    });
+
+
+conditionizr.config({
+    assets: '/assets/js/conditionizr/',
+    tests: {
+        'windows': ['class'],
+        'mac': ['class'],
+        'firefox': ['class'],
+        'chrome': ['class'],
+        'touch': ['class'],
+        'ie11': ['class'],
+        'ie10': ['class'],
+        'ie9': ['class'],
+        'ie8': ['class'],
+        'ie7': ['class'],
+        'ie6': ['class']
+    }
+});
+
+
+conditionizr.load('/assets/js/conditionizr/ie/warning.js', ['ie6', 'ie7']);
+conditionizr.on('ie7', function () {
+
+    window.onload = function() {
+        legacyIEwarning(function() {
+            return {imgPath: "/assets/js/conditionizr/ie/i" /*specifies the path to each of the browser icons*/};
+        });
+    };
 
 });

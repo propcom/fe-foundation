@@ -22,30 +22,30 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 
 		<script src="/assets/js/vendor/modernizr.custom.js"></script>
-		<script src="/assets/js/vendor/conditionizr.min.js"></script>		
+		<script src="/assets/js/vendor/conditionizr.min.js"></script>
 
 	</head>
 
 	<body id="<?= $page; ?>">
 
-		<section>
-			<header class="header--main">
-				<h1>
-					Welcome.
-				</h1>
-			</header>
-		</section>
+		<div class="page  page--<?= $page; ?>">
 
-		<section role="main">
-			<?= $content ?>
-		</section><!-- End of main -->
+			<section>
+				<header class="header--main">
+					<h1>Welcome</h1>
+				</header>
+			</section>
 
-		<footer>
-		</footer>
+			<main role="main">
+				<?= $content ?>
+			</main>
 
-		<!-- JavaScript at the bottom for fast page loading -->
+			<footer role="contentinfo"></footer>
+		</div>
 
-		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<?/* JavaScript at the bottom for fast page loading  */?>
+
+		<?/* Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline */?>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
@@ -54,16 +54,15 @@
 		<?php endif ?>
 
 		<? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
-			<script src="/assets/js/vendor/conditionizr-init.js"></script>
-			<script src="/assets/js/lib/plugins.js"></script>
+			<script src="/assets/js/modules/conditionizr-init.js"></script>
 			<script src="/assets/js/modules/forms.js"></script>
 			<script src="/assets/js/modules/ajax-forms.js"></script>
 			<script src="/assets/js/src/script.js"></script>
 
-			<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
-				<script src="/assets/js/scripts.js"></script>
-			<? ELSE: ?>
-				<script src="/assets/js/scripts.min.js"></script>
+		<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
+			<script src="/assets/js/scripts.js"></script>
+		<? ELSE: ?>
+			<script src="/assets/js/scripts.min.js"></script>
 		<? ENDIF; ?>
 
 		<script>

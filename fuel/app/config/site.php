@@ -18,7 +18,7 @@ return array (
 
 	'analytics' => 'UA-XXXXX-X',
 
-	'siteid' => 'xxx',
+	'siteid' => '135',
 
 	'sitename' => "My awesome site",
 

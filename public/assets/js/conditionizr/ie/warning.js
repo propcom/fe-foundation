@@ -1,12 +1,3 @@
-window.onload = function() {
-	ie6Warning(function() {
-		return {imgPath: "/assets/conditionizr/ie6/i" /*specifies the path to each of the browser icons*/};
-	});
-};
-
-
-
-
 // FONT
 WebFontConfig = {
 	google: {families: ['Fjalla+One::latin']}
@@ -22,7 +13,7 @@ WebFontConfig = {
 })();
 
 //render this via backend
-window.IE6WarningMessage = {
+window.legacyIEwarningMessage = {
 	msg1: "You are using an outdated browser!",
 	msg2: "Please upgrade to a modern browser for a better, safer, faster & more beautiful web experience.",
 	br: {
@@ -51,9 +42,9 @@ window.IE6WarningMessage = {
 			document.cookie = "gs_cookie=firstme;expires=" + exdate.toUTCString();
 
 			var configObj = (typeof(cb) == 'function') ? cb() : {},
-					//configObj[message] = window.IE6WarningMessage
+					//configObj[message] = window.legacyIEwarningMessage
 
-					l10n = window.IE6WarningMessage,
+					l10n = window.legacyIEwarningMessage,
 					imagesStyle = {
 				bg: 'transparent url(' + configObj.imgPath + '/images.gif) no-repeat scroll ',
 				background: {
@@ -135,11 +126,11 @@ window.IE6WarningMessage = {
 				_html.l.style.background = "#fff";
 			})();
 
-			//setup ie6warning box
+			//setup legacyIEwarning box
 			(function() {
 				var _ddw = 550,
-						_ddh = 390;
-				_html.d.setAttribute('id', 'ie6Warning');
+				      _ddh = 500;
+				_html.d.setAttribute('id', 'legacyIEwarning');
 				_html.d.style.zIndex = 99999;
 				_html.d.style.width = _ddw + "px";
 				_html.d.style.height = _ddh + "px";
@@ -248,5 +239,5 @@ window.IE6WarningMessage = {
 	};
 
 	//set it to global namesapce
-	window.ie6Warning = ieWarning;
+	window.legacyIEwarning = ieWarning;
 })(window);
