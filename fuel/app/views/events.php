@@ -15,7 +15,7 @@
 		<? foreach ($eventsData["events"] as $event) { ?>
 		<? // var_dump($event); die; ?>
 			<div itemscope itemtype="http://data-vocabulary.org/Event">
-				​<a href="<?=Uri::base(false).'?event='.$event["event_id"]?>" itemprop="url"><span itemprop="summary"><?= $event["event_name"] ?></span></a>
+				​<a href="<?=Uri::base(false).$page.'/?event='.$event["event_id"]?>" itemprop="url"><span itemprop="summary"><?= $event["event_name"] ?></span></a>
 				<p>
 					<time itemprop="startDate" datetime="<?= $event["event_date"] ?>">
 						<?= $event["event_date"] ?>
