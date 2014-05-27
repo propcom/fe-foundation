@@ -27,15 +27,15 @@
 		<meta name="generator" content="http://www.propeller.uk.com" />
 		<meta name="author" content="Propeller Communications" />
 
-		<link rel="canonical" href="<? $siteurl ?>" />
+		<link rel="canonical" href="<?= $siteurl ?>" />
 
 		<?/* If your site is responsive remember to set TRUE in config */?>
 		<? if ($responsive == 'true') : ?>
-				<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 		<? endif  ?>
 
 
-		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/css/main.css">
 
 		<script src="/assets/js/vendor/modernizr.custom.js"></script>
 		<script src="/assets/js/vendor/conditionizr.min.js"></script>
