@@ -27,7 +27,6 @@ MAIN = (function ($) {
 		//signup
 		$('#signup-form').ajaxform({
 			error_location: 'input', // input, label or tooltip
-			show_alert: true,
 			form_success: function() { /*callback here*/ },
 			form_failure: function() { /*callback here*/ }
 		});
@@ -35,7 +34,6 @@ MAIN = (function ($) {
 		//contact
 		$('#contact-form').ajaxform({
 			error_location: 'input', // input, label or tooltip
-			show_alert: true,
 			form_success: function() { /*callback here*/ },
 			form_failure: function() { /*callback here*/ }
 		});
@@ -43,7 +41,6 @@ MAIN = (function ($) {
 		//booking
 		$('#booking-form').ajaxform({
 			error_location: 'input', // input, label or tooltip
-			show_alert: true,
 			form_success: function() { /*callback here*/ },
 			form_failure: function() { /*callback here*/ }
 		});

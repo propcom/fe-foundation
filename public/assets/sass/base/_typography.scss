@@ -1,24 +1,103 @@
-/*  Headers  */
+/*-----------------------------------------------------------------------------
+--------------------------------3--------$TYPOGRAPHY----------------------------
+-------------------------------------------------------------------------------*/
 
-h1, .alpha-header{
-	text-transform: uppercase;
-	@include font-size(72);
-	@include mq($mobular) {
-		@include font-size(42);
-	}
+// important to define 62.5% for [rem] font conversion
+html {
+  font-size:62.5%;
+  line-height: 62.5%;
 }
 
-h2, .beta-header{
-	font-size: 2em;
-	line-height: 1.125em;
+
+body{
+  font-family:$primaryFont;
+  @include font-size($base-font-size);
+  color:$primaryColor;
+  font-weight:normal;
 }
 
-h3, .omega-header{
-	font-size: 1.5em;
-	line-height: 1.125em;
+
+/* Paragraph sizes */
+
+p {
+	margin: 0 0 10px;
+	color: $primaryColor;
+	font-family:$secondaryFont;
+	@include font-size($p-size);
+	text-align:left;
 }
 
-h4, .zeta-header{
-	font-size: 1em;
-	line-height: 1.125em;
+a, a:active {color:$primaryColor; text-decoration:none;}
+a:hover {color:$primaryColor; text-decoration:underline;}
+
+
+/*-----------------------------------------------------------------------------
+-------------------------------HEADINGS----------------------------------------
+-------------------------------------------------------------------------------*/
+
+%headings {
+ 	margin:0 0 10px 0;
+ 	font-family:$primaryFont;
+ 	font-weight:normal;
+}
+
+// Standard Headings
+h1,
+.h_alpha {
+	@extend %headings;
+	@include font-size($alpha-size);
+}
+
+h2,
+.h_beta {
+	@extend %headings;
+	@include font-size($beta-size);
+}
+h3,
+.h_gamma{
+	@extend %headings;
+	@include font-size($gamma-size);
+}
+
+h4,
+.h_delta{
+	@extend %headings;
+	@include font-size($delta-size);
+}
+
+h5,
+.h_epsilon{
+	@extend %headings;
+	@include font-size($epsilon-size);
+}
+
+h6,
+.h_zeta{
+	@extend %headings;
+	@include font-size($zeta-size);
+}
+
+
+// Mega Headlines
+.h_giga{
+	@include font-size($giga-size);
+}
+.h_mega{
+	@include font-size($mega-size);
+}
+.h_kilo{
+	@include font-size($kilo-size);
+}
+.h_hecto {
+	@include font-size($hecto-size);
+}
+
+
+// Micro Headlines
+
+.h_milli{
+	@include font-size($milli-size);
+}
+.h_micro{
+	@include font-size($micro-size);
 }

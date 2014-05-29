@@ -1,51 +1,184 @@
+/*-----------------------------------------------------------------------------
+----------------------------1--------$MIXINS-----------------------------------
+-------------------------------------------------------------------------------*/
 
-	// media Queries
-	@mixin mq($px, $query1: max, $query2: width) {
-		@media screen and (#{$query1}-#{$query2}: $px) {
-			@content;
+
+	// --------------------------------------------------------------------------- //
+	// ----------------------- MEDIA QUERIES ------------------------------------- //
+	// --------------------------------------------------------------------------- //
+
+	// Constraints
+	$min: min-width;
+	$max: max-width;
+
+	@mixin mq($constraint, $viewport1, $viewport2: null) {
+
+	  @if $constraint == $min {
+
+		@media screen and ($min: $viewport1) {
+		  @content;
+		}
+
+	  } @else if $constraint == $max {
+
+		@media screen and ($max: $viewport1) {
+		  @content;
+		}
+
+	  } @else {
+
+		@media screen and ($min: $viewport1) and ($max: $viewport2) {
+		  @content;
+		}
+
+	  }
+
+	}
+
+	// USAGE:
+	//
+	// ---- for max-width media query ----
+	//
+	//  @include mq($max, 1080px) {
+	//      display:none;
+	//  }
+	//
+	// ---- for min-width media query ----
+	//
+	//  @include mq($min, 1080px) {
+	//      display:none;
+	//  }
+	//
+	// ---- OR for min-max ----
+	//
+	// @include mq(null, 700px, 780px) {
+	//     display:block;
+	// }
+
+
+
+	// --------------------------------------------------------------------------- //
+	// ------------------------------- FONTS ------------------------------------- //
+	// --------------------------------------------------------------------------- //
+
+
+	@mixin fonticon {
+		font-family: $fonticon;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1 ;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+
+	// px to rem for font-sizes and line-height
+	@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.25){
+		font-size: ($sizeValue * 1) + px;
+		line-height: ($line * 1) + px;
+		font-size: ($sizeValue / 10) + rem;
+		line-height: ($line / 10) + rem;
+	}
+	// usage: @include font-size(13);
+
+
+
+
+	// --------------------------------------------------------------------------- //
+	// ------------------------------- BOX MODEL RELATED ------------------------- //
+	// --------------------------------------------------------------------------- //
+
+	// Positioning offsets
+	@mixin _position ($property: absolute, $top: auto, $right: auto, $bottom: auto, $left: auto, $zindex: 2) {
+		position: $property;
+		top: $top;
+		right: $right;
+		bottom: $bottom;
+		left: $left;
+		z-index: $zindex;
+	}
+
+	// usage:  @include _position(absolute,10px,0px,auto,auto,2);
+	/*
+	returns__________
+	position:absolute;
+	top:10px;
+	right:0px;
+	bottom:auto;
+	left:auto;
+	z-index:5
+	*/
+
+
+	// Inline-Block
+	@mixin inline-block($align: bottom) {
+		display:-moz-inline-stack;
+		display: inline-block;
+		vertical-align: $align;
+		zoom: 1;
+		*display: inline;
+		*vertical-align: auto;
+	}
+	//usage: @include inline-block(top | middle | bottom);
+
+
+
+	// Clearfix
+	@mixin clearfix {
+
+		&:before,
+		&:after {
+			content: " ";
+			display: table;
+		}
+
+		&:after {
+			clear:both;
+		}
+
+		& {
+			*zoom:1;
 		}
 	}
-	
-	// px to rem for font-sizes and line-height
-	@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5){
-	  font-size: ($sizeValue * 1) + px;
-	  line-height: ($line * 1) + px;
-	  font-size: ($sizeValue / 12) + rem;
-	  line-height: ($line / 12) + rem;
+
+
+
+
+
+	// ------------------------------------------------------------------------------------- //
+	// ------------------------------- CROSS BROWSER OPACITY ------------------------------- //
+	// ------------------------------------------------------------------------------------- //
+
+	@mixin opacity($opacity, $ie-support:true) {
+
+		@if $ie-support == true {
+
+			filter: alpha(opacity=($opacity * 100));
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+			opacity: $opacity;
+
+		} @else {
+
+			opacity: $opacity;
+
+		}
 	}
 
-	// accelerate all the hardware for smoothers css transtions and transforms
-	@mixin hardwareAccelerate {
-	  -webkit-transform: translate3d(0,0,0);
-	  -webkit-perspective: 1000;
-	  -webkit-backface-visibility: hidden;
-
-	  -moz-transform: translate3d(0,0,0);
-	  -moz-perspective: 1000;
-	  -moz-backface-visibility: hidden;
-
-	  -ms-transform: translate3d(0,0,0);
-	  -ms-perspective: 1000;
-	  -ms-backface-visibility: hidden;
-
-	  transform: translate3d(0,0,0);
-	  perspective: 1000;
-	  backface-visibility: hidden;
-	}
-	
-	// cross browser opacity
-	@mixin opacity ($value)  {
-	  $ms_opacity : $value * 100;
-	    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(#{$ms_opacity})";
-	    filter: alpha(opacity=#{$ms_opacity});
-	    opacity: $value;
-	}   
+	// usage:
+	// @include opacity( 1 );
 
 
+	// ------------------------------------------------------------------------------------- //
+	// ------------------------------- GLOBAL VENDOR PREFIX -------------------------------- //
+	// ------------------------------------------------------------------------------------- //
 
-	//************************************************************************//
-	// Example: @include prefixer(border-radius, $radii, webkit ms spec);
-	//************************************************************************//
+
+	/*
+		Usage: @include prefixer(border-radius, $radii, webkit ms spec);
+	*/
 
 	$prefix-for-webkit:    true !default;
 	$prefix-for-mozilla:   true !default;
@@ -106,6 +239,56 @@
 	  @include prefixer(transform-origin, $axes, webkit moz ms o spec);
 	}
 
+
+
+	// ------------------------------------------------------------------------------------ //
+	// ------------------------------- COLOUR RELATED MIXINS ------------------------------ //
+	// ------------------------------------------------------------------------------------ //
+	// RGBA Mixin with fallback
+	@mixin rgba($attribute, $color, $background) {
+		$percent: alpha($color) * 100%;
+		$opaque: opacify($color, 1);
+		$solid-color: mix($opaque, $background, $percent);
+		#{$attribute}: $solid-color;
+		#{$attribute}: $color;
+	}
+	// usage:
+	// @include rgba('background-color', rgba(#000, 0.5), #000);
+
+
+
+
+	// -------------------------------------------------------------------------------------- //
+	// ------------------------------- FORM RELATED MIXINS ---------------------------------- //
+	// -------------------------------------------------------------------------------------- //
+
+	// Placeholder Input Styles
+	@mixin placeholder {
+		&.placeholder { @content };
+		&::-webkit-input-placeholder { @content };
+		&::-moz-placeholder { @content };
+		&:-ms-input-placeholder { @content };
+	}
+
+	// usage:
+	// input {
+	//    @include placeholder {
+	//      /some placeholder styles here/
+	//    }
+	// }
+
+
+
+	// remove pesky default styles in iOS.
+	@mixin remove-safari-defaults {
+		-webkit-appearance: none;
+		@include border-radius(0px);
+	}
+
+	// usage: @include remove-safari-defaults;
+
+
+
 	//************************************************************************//
 	// Generate a variable ($all-text-inputs) with a list of all html5
 	// input types that have a text-based input, excluding textarea.
@@ -163,4 +346,44 @@
 	//     border: 1px solid red;
 	//   }
 
+
+
+
+	// -------------------------------------------------------------------------------------- //
+	// ------------------------------- ANIMATION RELATED MIXINS ----------------------------- //
+	// -------------------------------------------------------------------------------------- //
+
+
+
+	// accelerate all the hardware for smoothers css transtions and transforms
+	@mixin hardwareAccelerate {
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-perspective: 1000;
+	  -webkit-backface-visibility: hidden;
+
+	  -moz-transform: translate3d(0,0,0);
+	  -moz-perspective: 1000;
+	  -moz-backface-visibility: hidden;
+
+	  -ms-transform: translate3d(0,0,0);
+	  -ms-perspective: 1000;
+	  -ms-backface-visibility: hidden;
+
+	  transform: translate3d(0,0,0);
+	  perspective: 1000;
+	  backface-visibility: hidden;
+	}
+
+
+	// ------------------------------------------------------------------------------ //
+	// --------------------------- Animation Easing Types --------------------------- //
+	// ------------------------------------------------------------------------------ //
+
+	$easeIn: cubic-bezier(0.825, 0.000, 1.000, 0.640);
+	$easeInOut: cubic-bezier(0.665, 0.000, 0.430, 1);
+	$easeOut: cubic-bezier(0.200, 0.470, 0.435, 0.970);
+	$linear: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+
+	// usage:
+	// e.g. @include transition(.6s $easeInOut all);
 

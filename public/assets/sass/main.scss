@@ -1,43 +1,79 @@
-/*  SASS imports  */
+/* =============================================================================
+   Primary styles
+   Author:
+   ========================================================================== */
 
-/*  Libs
-	This is any CSS that has come from a plugin.
-	Such as fancybox, pretty photo, etc.
+
+/*
+  Contents
+  --------
+  0 $VARIABLES
+  1 $MIXINS
+  2 $NORMALISATION/RESET
+  3 $TYPOGRAPHY
+  4 $FONTICON
+  5 $LAYOUT
+  6 $GRID
+  7 $COMPONENTS
+  8 $FORMS
+
 */
 
-// e.g. @import "lib/_fancybox";
-
-/* Base */
-
-@import "base/_variables";
-@import "base/_mixins";
-@import "base/_reset";
-@import "base/_base";
-@import "base/_typography";
-
-/*  Site
-	Your site styles for your
-	layout, header and footer
+/*============================
+*	Base
+	all base files to reset and get the site started
 */
 
-@import "layout/_site";
-@import "layout/_header";
-@import "layout/_footer";
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
+@import "base/typography";
+@import "base/fonticon";
 
-/*  Modules
-	Write all the modular SCSS.
-	Divide everything up in here, doesnt matter how
-	many files as it will all be compressed when live.
+
+
+/*============================
+*	Layout
+	Main layout elements of site - Header, sidebar footer etc but none of the reusable
+	elements that are inside of these including headers, links etc. Make these in a
+	more modular method.
 */
 
-@import "modules/_elements";
-@import "modules/_forms";
+@import "layout/layout";
 
-/*  Pages
-	Page specific css 
-	These are for pages which may require a lot 
-	of page specific styles
+
+
+/*============================
+*	Modules
+	this will be the core styles for the site. this should be as modular as possible
+	but no state styles. These are for the next section.
 */
 
-// e.g. @import "modules/_meet-the-team";
+@import "module/grid";
+@import "module/components";
+@import "module/forms";
 
+
+ /*============================
+*	Libraries
+	CSS files for any external libraries like fancybox etc.
+*/
+
+//@import "lib/fancybox";
+
+
+/*============================
+*	Page
+	all page files are aimed at general major/minor layout in regards to page specificity.
+*/
+
+//@import "page/main";
+
+
+/*============================
+*	DEBUG
+	highlights general validation issues - improper/invalid markup.
+	This can be enabled/disabled in "base/variables.scss"
+*/
+
+@import "base/debugmode";
