@@ -92,7 +92,7 @@
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', '<?=$analytics?>', '<? $siteurl ?>');
+			ga('create', '<?=$analytics?>', '<?= $siteurl ?>');
 			ga('send', 'pageview'<?= ($page == "page-not-found") ? ",'/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer" : "" ?>);
 
 	</script>
