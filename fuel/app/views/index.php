@@ -1,36 +1,53 @@
 
-	<section class="container container--centre">
-		<p>
-			Run sass from the assets Directory
-		</p>
-		<pre>sass --watch sass css</pre>
-		<p>Change the favicon... or Dave will kill you!</p>
+	<div class="container  text--centre">
 
-		<p>What's installed:</p>
-		<ul>
-			<li>SASS</li>
-			<li>Normalise</li>
-			<li>Condtionizr</li>
-			<li>Modernizr</li>
-			<li>Bourbon</li>
-		</ul>
-		<p>
-			Don't forget to define your global variables in fuel/app/config/site.php!
-		</p>
-		<p>
-			Looking for some front end inspiration? The below will get you started...
-		</p>
-		<ul>
-			<li>
-				<a href="http://smacss.com/book/" target="_blank">SMACSS</a>
-			</li>
-			<li>
-				<a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">BEM</a>
-			</li>
-			<li>
-				<a href="http://sass-lang.com/guide" target="_blank">SASS</a>
-			</li>
-		</ul>
+		<div class="row">
+			<h3>
+				Run sass from the assets Directory
+			</h3>
+
+			<pre>sass --watch --sourcemap sass:css</pre>
+
+			<p class="strong mt10">
+				<small>the <code>--sourcemap</code> attribute allows you to see what line of what scss file you need in dev tools. Make sure to enable the 'CSS Source Maps' in your dev tool settings.</small>
+			</p>
+		</div>
+
+
+		<div class="row">
+			<h6 class="text--upper"><strong>Change the favicon... or Dave will kill you!</strong></h6>
+		</div>
+
+		<div class="row">
+			<h3>What's installed:</h3>
+			<ul>
+				<li>SASS</li>
+				<li>Normalise</li>
+				<li>Condtionizr</li>
+				<li>Modernizr</li>
+				<li><strong>Imager<br /><em>(see markup for implementation)</em></strong></li>
+			</ul>
+		</div>
+
+
+		<div class="row">
+			<h3>
+				Looking for some front end inspiration? The below will get you started...
+			</h3>
+			<ul>
+				<li>
+					<a href="http://smacss.com/book/" target="_blank">SMACSS</a>
+				</li>
+				<li>
+					<a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">BEM</a>
+				</li>
+				<li>
+					<a href="http://sass-lang.com/guide" target="_blank">SASS</a>
+				</li>
+			</ul>
+		</div>
+
+		<h6 class="text--upper"><strong>Don't forget to define your global variables in fuel/app/config/site.php!</strong></h6>
 
 
 		<?/*
@@ -45,5 +62,5 @@
 
 		*/?>
 
-	</section>
+	</div>
 
