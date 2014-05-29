@@ -4,28 +4,34 @@
 
 // important to define 62.5% for [rem] font conversion
 html {
-  font-size:62.5%;
-  line-height: 62.5%;
+    font-size:62.5%;
+    line-height: 62.5%;
 }
 
 
 body{
-  font-family:$primaryFont;
-  @include font-size($base-font-size);
-  color:$primaryColor;
-  font-weight:normal;
+    font-family:$primaryFont;
+    @include font-size($base-font-size);
+    color:$primaryColor;
+    font-weight:normal;
+    text-align:left;
 }
 
 
 /* Paragraph sizes */
 
 p {
-	margin: 0 0 10px;
-	color: $primaryColor;
-	font-family:$secondaryFont;
-	@include font-size($p-size);
-	text-align:left;
+    margin: 0 0 10px;
+    color: $primaryColor;
+    font-family:$primaryFont;
+    @include font-size($p-size);
 }
+
+li {
+    font-family:$primaryFont;
+    @include font-size($p-size);
+}
+
 
 a, a:active {color:$primaryColor; text-decoration:none;}
 a:hover {color:$primaryColor; text-decoration:underline;}
@@ -36,68 +42,68 @@ a:hover {color:$primaryColor; text-decoration:underline;}
 -------------------------------------------------------------------------------*/
 
 %headings {
- 	margin:0 0 10px 0;
- 	font-family:$primaryFont;
- 	font-weight:normal;
+    margin:0 0 10px 0;
+    font-family:$primaryFont;
+    font-weight:normal;
 }
 
 // Standard Headings
 h1,
 .h_alpha {
-	@extend %headings;
-	@include font-size($alpha-size);
+    @extend %headings;
+    @include font-size($alpha-size);
 }
 
 h2,
 .h_beta {
-	@extend %headings;
-	@include font-size($beta-size);
+    @extend %headings;
+    @include font-size($beta-size);
 }
 h3,
 .h_gamma{
-	@extend %headings;
-	@include font-size($gamma-size);
+    @extend %headings;
+    @include font-size($gamma-size);
 }
 
 h4,
 .h_delta{
-	@extend %headings;
-	@include font-size($delta-size);
+    @extend %headings;
+    @include font-size($delta-size);
 }
 
 h5,
 .h_epsilon{
-	@extend %headings;
-	@include font-size($epsilon-size);
+    @extend %headings;
+    @include font-size($epsilon-size);
 }
 
 h6,
 .h_zeta{
-	@extend %headings;
-	@include font-size($zeta-size);
+    @extend %headings;
+    @include font-size($zeta-size);
 }
 
 
 // Mega Headlines
 .h_giga{
-	@include font-size($giga-size);
+    @include font-size($giga-size);
 }
 .h_mega{
-	@include font-size($mega-size);
+    @include font-size($mega-size);
 }
 .h_kilo{
-	@include font-size($kilo-size);
+    @include font-size($kilo-size);
 }
 .h_hecto {
-	@include font-size($hecto-size);
+    @include font-size($hecto-size);
 }
 
 
 // Micro Headlines
 
 .h_milli{
-	@include font-size($milli-size);
+    @include font-size($milli-size);
 }
 .h_micro{
-	@include font-size($micro-size);
+    @include font-size($micro-size);
 }

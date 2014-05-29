@@ -12,10 +12,11 @@
   2 $NORMALISATION/RESET
   3 $TYPOGRAPHY
   4 $FONTICON
-  5 $LAYOUT
-  6 $GRID
-  7 $COMPONENTS
-  8 $FORMS
+  5 $HELPERS
+  6 $LAYOUT
+  7 $GRID
+  8 $COMPONENTS
+  9 $FORMS
 
 */
 
@@ -29,6 +30,15 @@
 @import "base/base";
 @import "base/typography";
 @import "base/fonticon";
+
+
+/*============================
+* Helpers
+  Helper classes in accordance with DRY mentality. Eliminates the need to create specific classes to perform
+  simple tasks
+*/
+
+@import "modules/helper/helpers";
 
 
 
@@ -49,9 +59,9 @@
 	but no state styles. These are for the next section.
 */
 
-@import "module/grid";
-@import "module/components";
-@import "module/forms";
+@import "modules/grid";
+@import "modules/components";
+@import "modules/forms";
 
 
  /*============================

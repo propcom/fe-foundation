@@ -22,7 +22,7 @@
 $global-font-opt: true;
 
 // =============================================================
-// ====================== Site Source Path =====================
+// ====================== Site Source Paths ====================
 // =============================================================
 
 $imgsrc: "../img";
@@ -43,7 +43,7 @@ $fontsrc: "../fonts";
 
 
 // Base stuff - in px --> to be converted to rems
-$base-font-size:	16 	!default;
+$base-font-size:	12 	!default;
 
 $base-line-height:	$base-font-size * 1.25 !default;
 
