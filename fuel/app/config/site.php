@@ -10,9 +10,11 @@
  * @link       http://fuelphp.com
  */
 
-return array (
+return array (	
 
-	'site_email' => 'brett.chisholm@propcom.co.uk',
+	// environment option email addresses
+
+	'site_email' => 'frontend@propcom.co.uk',
 
 	'siteurl' => 'example.com',
 
@@ -20,13 +22,16 @@ return array (
 
 	'analytics' => 'UA-XXXXX-X',
 
-	'siteid' => '135',
+	'siteid' => '506',
 
 	'sitename' => "My awesome site",
 
 	'twitter' => "PropellerComms",
 
 	// define true or false
-	'responsive' => 'false'
+	'responsive' => 'false',
+
+	// google maps lng and lat defined as a data attribute on a map div
+	'lnglat' => 'xxxx'
 
 );
