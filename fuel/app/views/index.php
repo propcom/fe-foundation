@@ -47,8 +47,39 @@
 			</ul>
 		</div>
 
-		<h6 class="text--upper"><strong>Don't forget to define your global variables in fuel/app/config/site.php!</strong></h6>
-
+		<div class="row">
+			<h6 class="text--upper">
+				<strong>
+					Don't forget to define your global variables in fuel/app/config/site.php!
+				</strong>
+			</h6>
+			<ul>
+				<li>
+					site_email: <strong><?=$site_email?></strong>
+				</li>
+				<li>
+					siteurl: <strong><?=$siteurl?></strong>
+				</li>
+				<li>
+					phone: <strong><?=$phone?></strong>
+				</li>
+				<li>
+					analytics: <strong><?=$analytics?></strong>
+				</li>
+				<li>
+					siteid: <strong><?=$siteid?></strong>
+				</li>
+				<li>
+					sitename: <strong><?=$sitename?></strong>
+				</li>
+				<li>
+					twitter: <strong><?=$twitter?></strong>
+				</li>
+				<li>
+					responsive: <strong><?=$responsive?></strong>
+				</li>
+			</ul>
+		</div>
 
 		<?/*
 			ImagerJS Markup to add in place of your <img /> tags
