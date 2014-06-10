@@ -29,16 +29,27 @@
 
     <link rel="canonical" href="<?= $siteurl ?>" />
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="<?= $twitter ?>">
+    <meta name="twitter:title" content="<?= $sitename ?>">
+    <meta name="twitter:description" content="<?= $title ?>">
+    <meta name="twitter:image" content="<?= 'http://'.$siteurl.'/assets/img/social-avatar.jpg' ?>">
+
+    <meta property="og:title" content="<?= $sitename ?>">
+    <meta property="og:image" content="<?= 'http://'.$siteurl.'/assets/img/social-avatar.jpg' ?>">
+    <meta property="og:site_name" content="<?= $sitename ?>"/>
+    <meta property="og:description" content="<?= $title ?>"/>
+
     <?/* If your site is responsive remember to set TRUE in config */?>
-    <? if ($responsive == 'true') : ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<? endif  ?>
+    <? if ($responsive) : ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <? endif; ?>
 
 
-<link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 
-<script src="/assets/js/vendor/modernizr.custom.js"></script>
-<script src="/assets/js/vendor/conditionizr.min.js"></script>
+    <script src="/assets/js/vendor/modernizr.custom.js"></script>
+    <script src="/assets/js/vendor/conditionizr.min.js"></script>
 
 </head>
 
