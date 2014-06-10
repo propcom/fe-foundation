@@ -25,15 +25,15 @@
 					<?= $event["event_desc"] ?>
 				</p>
 				<? if($event["hasImage"]) : ?>
-					<img src="<?= $event["imageUrl"] ?>" alt="<?= $event["event_name"] ?>">
+					<img src="<?= $event["imageUrl"] ?>" alt="<?= $event["event_name"] ?>" itemprop="image">
 				<? else : ?>
-					<img src="images/event-placeholder.jpg ?>" alt="<?= $event["event_name"] ?>">
+					<img src="images/event-placeholder.jpg ?>" alt="<?= $event["event_name"] ?>" itemprop="image">
 				<? endif ?>
 				​<span itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
 					​<span itemprop="name"><?= $sitename ?></span>
 					​<span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-						<span itemprop="street-address">24 High Street</span>, 
-						<span itemprop="locality">Wimbledon Village</span>, 
+						<span itemprop="street-address">24 High Street</span>,
+						<span itemprop="locality">Wimbledon Village</span>,
 						<span itemprop="region">London</span>
 					</span>
 				</span>
