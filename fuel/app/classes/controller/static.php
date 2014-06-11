@@ -16,6 +16,8 @@ class Controller_Static extends Controller_Template {
 		    'phone' => \Config::get('site.phone'),
 		    'sitename' => \Config::get('site.sitename'),
 		    'twitter' => \Config::get('site.twitter'),
+		    'facebook' => \Config::get('site.facebook'),
+		    'instagram' => \Config::get('site.instagram'),
 		    'responsive' => \Config::get('site.responsive'),
 		), null, true);
 

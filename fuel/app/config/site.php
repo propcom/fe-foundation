@@ -11,9 +11,7 @@
  */
 
 return array (	
-
-	// environment option email addresses
-
+	
 	'site_email' => 'frontend@propcom.co.uk',
 
 	'siteurl' => 'example.com',
@@ -28,8 +26,12 @@ return array (
 
 	'twitter' => "PropellerComms",
 
+	'facebook' => "xxxx",
+
+	'instagram' => "xxxx",
+
 	// define true or false
-	'responsive' => 'false',
+	'responsive' => false,
 
 	// google maps lng and lat defined as a data attribute on a map div
 	'lnglat' => 'xxxx'
