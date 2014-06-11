@@ -105,14 +105,14 @@ $bold: 600;
 // ======================= Colour Vars =========================
 // =============================================================
 
-$primaryColor: 		#000; // black
-$secondaryColor: 	#fff; // white
-$tertiaryColor: 	#ccc; // grey
 
-$black:		$primaryColor;
-$white:		$secondaryColor;
-$grey:		$tertiaryColor;
+$black:		#000;
+$white:		#fff;
+$grey:		#ccc;
 
+$primaryColor: 		$black; // black
+$secondaryColor: 	$white; // white
+$tertiaryColor: 	$grey; // grey
 
 $error: 	#B42C2C; // error red colour
 $success: 	#090; // success green colour
