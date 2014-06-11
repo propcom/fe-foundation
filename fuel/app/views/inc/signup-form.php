@@ -40,7 +40,7 @@ $sendEmail = true;
 $email->setSubject($sitename);
 
 $email->setFromEmail($site_email); // Email is sent 'from' this address
-$email->setFromName($sitename); // "Friendly" name emails are sent from (usually "<pubname> Website")
+$email->setFromName('Signup from '.$sitename); // "Friendly" name emails are sent from (usually "<pubname> Website")
 
 $email->addRecipient($site_email);
 //$email->addRecipient('ruth.nachum@propcom.co.uk');		// Add a recipient to the email
