@@ -20,14 +20,14 @@
 
     <title><?= $title ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<?= $description ?>" />
-    <meta name="keywords" content="<?= $keywords ?>" />
-    <meta name="revisit-after" content="14 days" />
-    <meta name="robots" content="all" />
-    <meta name="generator" content="http://www.propeller.uk.com" />
-    <meta name="author" content="Propeller Communications" />
+    <meta name="description" content="<?= $description ?>">
+    <meta name="keywords" content="<?= $keywords ?>">
+    <meta name="revisit-after" content="14 days">
+    <meta name="robots" content="all">
+    <meta name="generator" content="http://www.propeller.uk.com">
+    <meta name="author" content="Propeller Communications">
 
-    <link rel="canonical" href="<?= $siteurl ?>" />
+    <link rel="canonical" href="<?= $siteurl ?>">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="<?= $twitter ?>">
@@ -37,8 +37,8 @@
 
     <meta property="og:title" content="<?= $sitename ?>">
     <meta property="og:image" content="<?= 'http://'.$siteurl.'/assets/img/social-avatar.jpg' ?>">
-    <meta property="og:site_name" content="<?= $sitename ?>"/>
-    <meta property="og:description" content="<?= $title ?>"/>
+    <meta property="og:site_name" content="<?= $sitename ?>">
+    <meta property="og:description" content="<?= $title ?>">
 
     <?/* If your site is responsive remember to set TRUE in config */?>
     <? if ($responsive) : ?>
