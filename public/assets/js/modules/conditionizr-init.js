@@ -1,21 +1,21 @@
 /*!
  * Conditionizr test: Touch
  */
-conditionizr.add('touch', [], function () {
+conditionizr.add('touch', function () {
     return !!'ontouchstart' in window || !!navigator.msMaxTouchPoints;
 });
 
 /*!
  * Conditionizr test: Chrome
  */
-conditionizr.add('chrome', [], function () {
+conditionizr.add('chrome', function () {
     return !!window.chrome && /google/i.test(navigator.vendor);
 });
 
 /*!
  * Conditionizr test: Firefox
  */
-conditionizr.add('firefox', [], function () {
+conditionizr.add('firefox', function () {
     return 'InstallTrigger' in window;
 });
 
@@ -23,7 +23,7 @@ conditionizr.add('firefox', [], function () {
 /*!
  * Conditionizr test: Opera
  */
-conditionizr.add('opera', [], function () {
+conditionizr.add('opera', function () {
     return !!window.opera || /opera|opr/i.test(navigator.userAgent);
 });
 
@@ -32,7 +32,7 @@ conditionizr.add('opera', [], function () {
  * @cc_on Conditional Compilation to test the
  * JavaScript version and MSIE 6 in the UserAgent
  */
-conditionizr.add('ie6', [], function () {
+conditionizr.add('ie6', function () {
   return (Function('/*@cc_on return (@_jscript_version == 5.6 || (@_jscript_version == 5.7 && /MSIE 6\.0/i.test(navigator.userAgent))); @*/')());
 });
 
@@ -41,14 +41,14 @@ conditionizr.add('ie6', [], function () {
  * @cc_on Conditional Compilation to test the
  * JavaScript version and MSIE 7 in the UserAgent
  */
-conditionizr.add('ie7', [], function () {
+conditionizr.add('ie7', function () {
   return (Function('/*@cc_on return (@_jscript_version == 5.7 && /MSIE 7\.0(?!.*IEMobile)/i.test(navigator.userAgent)); @*/')());
 });
 
 /*!
  * Conditionizr test: IE8
  */
-conditionizr.add('ie8', [], function () {
+conditionizr.add('ie8', function () {
     var version = false;
     /*@cc_on
         if (@_jscript_version > 5.7 && !/^(9|10)/.test(@_jscript_version))
@@ -60,7 +60,7 @@ conditionizr.add('ie8', [], function () {
 /*!
  * Conditionizr test: IE9
  */
-conditionizr.add('ie9', [], function () {
+conditionizr.add('ie9', function () {
     var version = false;
     /*@cc_on
         if (/^9/.test(@_jscript_version) && /MSIE 9\.0(?!.*IEMobile)/i.test(navigator.userAgent))
@@ -72,7 +72,7 @@ conditionizr.add('ie9', [], function () {
 /*!
  * Conditionizr test: IE10
  */
-conditionizr.add('ie10', [], function () {
+conditionizr.add('ie10', function () {
     var version = false;
     /*@cc_on
         if (/^10/.test(@_jscript_version) && /MSIE 10\.0(?!.*IEMobile)/i.test(navigator.userAgent))
@@ -84,21 +84,21 @@ conditionizr.add('ie10', [], function () {
 /*!
  * Conditionizr test: IE11
  */
-conditionizr.add('ie11', [], function () {
+conditionizr.add('ie11', function () {
   return /(?:\sTrident\/7\.0;.*\srv:11\.0)/i.test(navigator.userAgent);
 });
 
 /*!
  * Windows
  */
-conditionizr.add('windows', [], function () {
+conditionizr.add('windows', function () {
     return /win/i.test(navigator.platform);
 });
 
 /*!
  * Mac
  */
-conditionizr.add('mac', [], function () {
+conditionizr.add('mac', function () {
     return /mac/i.test(navigator.platform);
 });
 

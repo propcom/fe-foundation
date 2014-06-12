@@ -5,7 +5,6 @@
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-    <? /* Ensures latest version of IE is used in versions of IE that contain multiple rendering engines. */?>
     <meta charset="utf-8">
 
     <?/* Prefetch DNS for external assets (Twitter widgets, Maps etc). */?>
@@ -49,8 +48,6 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <script src="/assets/js/vendor/modernizr.custom.js"></script>
-    <script src="/assets/js/vendor/conditionizr.min.js"></script>
-    <script src="/assets/js/modules/conditionizr-init.js"></script>
 
 </head>
 
@@ -83,10 +80,12 @@
 
 
     <? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
+    <script src="/assets/js/lib/conditionizr.js"></script>
     <script src="/assets/js/lib/imager.js"></script>
 
     <script src="/assets/js/objects/ajax-forms.js"></script>
 
+    <script src="/assets/js/modules/conditionizr-init.js"></script>
     <script src="/assets/js/modules/console.log.js"></script>
     <script src="/assets/js/modules/forms.js"></script>
 
