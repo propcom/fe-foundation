@@ -1,17 +1,75 @@
 MAIN = (function ($) {
+    $('#reservation-date-month').change(function(){
+		var d = new Date();
+
+		var month = d.getMonth()+1;
+		var day = d.getDate();
+		var year = d.getFullYear();
+
+		$('#reservation-date-day').empty();
+    	$('#reservation-date-day').append('<option value="Day">Day</option>');
+
+    	if($(this).val()==month) {
+    		var month = $(this).val();
+    		var d= new Date(year, month, 0);
+    		var days = d.getDate();
+
+    		for (i=1; i<=day-1; i++) {
+    			$('#reservation-date-day').append('<option value="' + i + '" disabled=disabled>' + i + '</option>');
+    		}
+    		for (i=day; i<=days; i++) {
+    			$('#reservation-date-day').append('<option value="' + i + '">' + i + '</option>');
+    		}
+    	} else {
+    		var month = $(this).val();
+    		var d= new Date(year, month, 0);
+    		var days = d.getDate();
+
+    		for (i=1; i<=days; i++) {
+    			$('#reservation-date-day').append('<option value="' + i + '">' + i + '</option>');
+    		}
+    	}
+    });
+
+	var lat = '';
+	var lng = '';
 
 	init = function () {
 		// Code here runs straight away
 
 		$(DOMready);
 
+		var mapObject = document.getElementById("google-map");
+
+		if (mapObject) {
+
+			var article = document.querySelector('#google-map'),
+            lat = article.dataset.lat;
+
+			var article2 = document.querySelector('#google-map'),
+            lng = article2.dataset.lng;
+
+			function loadScript() {
+			  var script = document.createElement('script');
+			  script.type = 'text/javascript';
+			  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +'callback=initialize';
+			  document.body.appendChild(script);
+			}
+
+			window.onload = loadScript;
+
+			// window.load = loadScript();
+			// maps($('.map').data('lat'), $('.map').data('lng'));
+
+		}
+
 	},
 
 	DOMready = function () {
+
 		// Code here runs when the DOM is ready
 		imager();
 		ajaxForms();
-		$('#contact').length ? maps() : console.warn('sorry, google maps no exist here');
 
 	};
 
@@ -47,9 +105,11 @@ MAIN = (function ($) {
 
 	};
 
-	maps = function() {
+	maps = function(lat, lng) {
 
-		var latlng = new google.maps.LatLng(51.4926406357673, -0.14077541993339);
+		console.log(lat);
+
+		var latlng = new google.maps.LatLng(lat, lng);
 		var myOptions = {
 			zoom: 14,
 			center: latlng,
@@ -77,6 +137,7 @@ MAIN = (function ($) {
 	return {
 		start : init
 	};
+
 
 })(jQuery);
 
