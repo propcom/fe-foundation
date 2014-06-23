@@ -1,0 +1,39 @@
+/*-----------------------------------------------------------------------------
+--------------------------------6--------$LAYOUT--------------------------------
+-------------------------------------------------------------------------------*/
+
+/* Utilising the SMACSS " .l- " prefix for layout elements */
+
+.l-head {
+
+}
+
+.l-main {
+
+}
+
+.l-foot {
+
+}
+
+.header {
+
+	&--main {
+		text-align: center;
+		background: #eeeeee;
+		width: 100%;
+		margin-bottom: 40px;
+		overflow: hidden;
+	}
+
+}
+
+
+main {
+
+}
+
+
+	footer {
+		padding: 20px 0;
+	}

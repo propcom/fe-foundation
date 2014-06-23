@@ -1,5 +1,5 @@
 <?php
-$SETUP = array('USER' => 'PropellerComms', 'MAXIMUM_ROWS' => 5);
+$SETUP = array('USER' => '$twitter', 'MAXIMUM_ROWS' => 5);
 // DEFINES
 foreach ($SETUP as $i => $v) {
 	if ($i == 'DATE_FORMAT' && $v == '') {

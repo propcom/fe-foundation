@@ -2,7 +2,29 @@
 
 class Controller_Static extends Controller_Template {
 
+	public function set_config() {
+
+		// load site config
+		\Config::load('site', true);
+
+		// set global vars
+		View::set_global(array(
+		    'siteid' => \Config::get('site.siteid'),
+		    'siteurl' => \Config::get('site.siteurl'),
+		    'site_email' => \Config::get('site.site_email'),
+		    'analytics' => \Config::get('site.analytics'),
+		    'phone' => \Config::get('site.phone'),
+		    'sitename' => \Config::get('site.sitename'),
+		    'twitter' => \Config::get('site.twitter'),
+		    'facebook' => \Config::get('site.facebook'),
+		    'instagram' => \Config::get('site.instagram'),
+		    'responsive' => \Config::get('site.responsive'),
+		), null, true);
+
+	}
+
 	public function before() {
+
 		$this->uri_segments = Request::main()->uri->get_segments();
 
 		// Determine if we need to use a template (other than the default one)
@@ -10,10 +32,14 @@ class Controller_Static extends Controller_Template {
 			$this->template = $this->uri_segments[0] . '/template';
 		}
 
+		$this->set_config();
+
 		parent::before();
+
 	}
 
 	public function action_index() {
+
 		try {
 			// Get the URI and set the title
 			if (($uri = implode('/', $this->uri_segments))) {
@@ -37,6 +63,7 @@ class Controller_Static extends Controller_Template {
 			$page = str_replace('/', '-', $uri);
 			// Set the page into the view
 			View::set_global('page', $page);
+
 		}
 		// 404 if an above request fails
 		catch (Exception $e) {
@@ -49,6 +76,7 @@ class Controller_Static extends Controller_Template {
 			$this->auto_render = false;
 			return \Response::forge($this->template->content);
 		}
+
 	}
 
 	public function action_404() {

@@ -1,129 +1,105 @@
-<?php render("inc/meta"); ?>
+<? render("inc/meta"); ?>
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
-<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<title><?= $title ?></title>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<meta name="description" content="<?= $description ?>" />
-		<meta name="keywords" content="<?= $keywords ?>" />
-		<meta name="revisit-after" content="14 days" />
-		<meta name="robots" content="all" />
-		<meta name="generator" content="http://www.propeller.uk.com" />
-		<meta name="author" content="propeller communications" />
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-		<!-- Mobile viewport optimized: h5bp.com/viewport -->
-		<!--
-		////////////////////////////////////////////////////////////////////////
+<head>
+    <meta charset="utf-8">
 
-		UNCOMMENT THE NEXT LINE (viewport declaration) IF BUILDING A RESPONSIVE WEBSITE
+    <?/* Prefetch DNS for external assets (Twitter widgets, Maps etc). */?>
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
 
-		////////////////////////////////////////////////////////////////////////
-		-->
-		<!--<meta name="viewport" content="width=device-width">-->
+    <?/* Prerender pages for browser preloading */?>
+    <?/*<link rel="prerender" href="/link/to/another/page" />*/?>
 
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-		<link rel="stylesheet" href="/assets/css/style.css">
+    <title><?= $title ?></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="<?= $description ?>">
+    <meta name="keywords" content="<?= $keywords ?>">
+    <meta name="revisit-after" content="14 days">
+    <meta name="robots" content="all">
+    <meta name="generator" content="http://www.propeller.uk.com">
+    <meta name="author" content="Propeller Communications">
 
-		<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+    <link rel="canonical" href="<?= $siteurl ?>">
 
-		<!-- All JavaScript at the bottom, except this Modernizr build.
-		Modernizr enables HTML5 elements & feature detects for optimal performance.
-		Create your own custom Modernizr build: www.modernizr.com/download/ -->
-		<script src="/assets/js/vendor/modernizr.custom.js"></script>
-		<script src="/assets/js/vendor/conditionizr.min.js"></script>
-		<script>
-			conditionizr({
-				debug: false,
-				scriptSrc: '/assets/conditionizr/js/',
-				styleSrc: '/assets/conditionizr/css/',
-				ieLessThan: {
-					active: true,
-					version: '8',
-					scripts: false,
-					styles: false,
-					classes: true,
-					customScript: "/assets/conditionizr/ie6/warning.js"
-				},
-				chrome: {scripts: false, styles: false, classes: false, customScript: false},
-				safari: {scripts: false, styles: false, classes: false, customScript: false},
-				opera: {scripts: false, styles: false, classes: false, customScript: false},
-				firefox: {scripts: false, styles: false, classes: false, customScript: false},
-				ie10: {scripts: false, styles: false, classes: false, customScript: false},
-				ie9: {scripts: false, styles: false, classes: false, customScript: false},
-				ie8: {scripts: false, styles: false, classes: false, customScript: false},
-				ie7: {scripts: true, styles: true, classes: true, customScript: false},
-				retina: {scripts: false, styles: false, classes: false, customScript: false},
-				touch: {scripts: false, styles: false, classes: false, customScript: false},
-				mac: true,
-				win: true,
-				x11: true,
-				linux: true
-			});
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="<?= $twitter ?>">
+    <meta name="twitter:title" content="<?= $sitename ?>">
+    <meta name="twitter:description" content="<?= $title ?>">
+    <meta name="twitter:image" content="<?= 'http://'.$siteurl.'/assets/img/social-avatar.jpg' ?>">
 
-		</script>
-	</head>
+    <meta property="og:title" content="<?= $sitename ?>">
+    <meta property="og:image" content="<?= 'http://'.$siteurl.'/assets/img/social-avatar.jpg' ?>">
+    <meta property="og:site_name" content="<?= $sitename ?>">
+    <meta property="og:description" content="<?= $title ?>">
 
-	<body id="<?= $page; ?>">
+    <?/* If your site is responsive remember to set TRUE in config */?>
+    <? if ($responsive) : ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <? endif; ?>
 
-		<div class="container">
-			<header class="header">
-				<h1>Two Day Build</h1>
-			</header>
 
-			<nav>
-			</nav>
+    <link rel="stylesheet" href="/assets/css/main.css">
 
-			<section role="main">
-				<?= $content ?>
-			</section><!-- End of main -->
+    <script src="/assets/js/vendor/modernizr.custom.js"></script>
 
-			<footer>
-				<a href="http://www.propcom.co.uk"><img src="/assets/img/siteby.png" alt="Site by Propeller" width="109" height="23" /></a>
-			</footer>
+</head>
 
-		</div> <!-- end of main container -->
+<body id="<?= $page; ?>" data-page="<?= $page; ?>" itemscope itemtype="http://schema.org/WebPage">
 
-		<!-- JavaScript at the bottom for fast page loading -->
+    <div class="page  page--<?= $page; ?>">
 
-		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+        <section>
+            <header class="header--main">
+                <h1 class="text--upper">Welcome</h1>
+            </header>
+        </section>
 
-		<?php if ($page == "contact"): ?>
-			<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-		<?php endif ?>
+        <main role="main">
+            <?= $content ?>
+        </main>
 
-		<? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
-			<script src="/assets/js/lib/plugins.js"></script>
-			<script src="/assets/js/lib/jquery.cycle.all.js"></script>
-			<script src="/assets/js/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-			<script src="/assets/js/lib/jquery.fancybox.pack.js"></script>
-			<script src="/assets/js/lib/ajax-forms.js"></script>
-			<script src="/assets/js/lib/stretcharmstrong.js"></script>
-			<script src="/assets/js/src/script.js"></script>
+        <footer role="contentinfo"></footer>
+    </div>
 
-			<? ELSEIF (Fuel::$env === Fuel::TEST): ?>
-			<script src="/assets/js/scripts.js"></script>
-			<? ELSE: ?>
-			<script src="/assets/js/scripts.min.js"></script>
-		<? ENDIF; ?>
-		<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-		   mathiasbynens.be/notes/async-analytics-snippet -->
-		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview'<?= ($page == "page-not-found") ? ",'/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer" : "" ?>]];
-			(function(d, t) {
-				var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-				g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-				s.parentNode.insertBefore(g, s)
-			}(document, 'script'));
-		</script>
-	</body>
+    <?/* JavaScript at the bottom for fast page loading  */?>
+
+    <?/* Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline */?>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
+    <script src="/assets/js/lib/conditionizr.js"></script>
+    <script src="/assets/js/lib/imager.js"></script>
+
+    <script src="/assets/js/objects/ajax-forms.js"></script>
+
+    <script src="/assets/js/modules/conditionizr-init.js"></script>
+    <script src="/assets/js/modules/console.log.js"></script>
+    <script src="/assets/js/modules/forms.js"></script>
+
+    <script src="/assets/js/src/main.js"></script>
+
+    <? ELSEIF (Fuel::$env === Fuel::TEST): ?>
+    <script src="/assets/js/main.js"></script>
+    <? ELSE: ?>
+    <script src="/assets/js/main.min.js"></script>
+    <? ENDIF; ?>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '<?=$analytics?>', '<?= $siteurl ?>');
+        ga('send', 'pageview'<?= ($page == "page-not-found") ? ",'/404/?url=' + document.location.pathname + document.location.search + '&ref=' + document.referrer" : "" ?>);
+
+    </script>
+
+</body>
 </html>

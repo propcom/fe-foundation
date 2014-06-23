@@ -1,0 +1,89 @@
+/* =============================================================================
+   Primary styles
+   Author:
+   ========================================================================== */
+
+
+/*
+  Contents
+  --------
+  0 $VARIABLES
+  1 $MIXINS
+  2 $NORMALISATION/RESET
+  3 $TYPOGRAPHY
+  4 $FONTICON
+  5 $HELPERS
+  6 $LAYOUT
+  7 $GRID
+  8 $COMPONENTS
+  9 $FORMS
+
+*/
+
+/*============================
+*	Base
+	all base files to reset and get the site started
+*/
+
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
+@import "base/typography";
+@import "base/fonticon";
+
+
+/*============================
+* Helpers
+  Helper classes in accordance with DRY mentality. Eliminates the need to create specific classes to perform
+  simple tasks
+*/
+
+@import "modules/helper/helpers";
+
+
+
+/*============================
+*	Layout
+	Main layout elements of site - Header, sidebar footer etc but none of the reusable
+	elements that are inside of these including headers, links etc. Make these in a
+	more modular method.
+*/
+
+@import "layout/layout";
+
+
+
+/*============================
+*	Modules
+	this will be the core styles for the site. this should be as modular as possible
+	but no state styles. These are for the next section.
+*/
+
+@import "modules/grid";
+@import "modules/components";
+@import "modules/forms";
+
+
+ /*============================
+*	Libraries
+	CSS files for any external libraries like fancybox etc.
+*/
+
+//@import "lib/fancybox";
+
+
+/*============================
+*	Page
+	all page files are aimed at general major/minor layout in regards to page specificity.
+*/
+
+//@import "page/main";
+
+
+/*============================
+*	DEBUG
+	highlights general validation issues - improper/invalid markup.
+	This can be enabled/disabled in "base/variables.scss"
+*/
+
+@import "base/debugmode";
