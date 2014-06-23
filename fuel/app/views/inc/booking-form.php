@@ -142,7 +142,8 @@ require '/var/www/shared/formincludes/signupFormFooter.php';
 				<label for="reservation-date" >Arrival/Reservation Date</label>
 				<select name="reservation-date-day" id="reservation-date-day" data-required="<?= $reservationDateRequired; ?>" data-group="reservation-date">
 					<option value="Day">Day</option>
-					<?php for ($i = 1; $i <= 31; $i++) { ?>
+					<?php
+					for ($i = 1; $i <= 31; $i++) { ?>
 						<option value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->day == $i ? ' selected="selected"' : '' ?>><?php echo $i ?></option>
 					<? } ?>
 				</select>

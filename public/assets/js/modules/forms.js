@@ -38,6 +38,40 @@
 		});
 	}
 
+	function checkDate() {
+
+		var d = new Date();
+
+		var month = d.getMonth()+1;
+		var day = d.getDate();
+		var year = d.getFullYear();
+
+		$('#reservation-date-day').empty();
+    	$('#reservation-date-day').append('<option value="Day">Day</option>');
+
+    	if($(this).val()==month) {
+    		var month = $(this).val();
+    		var d= new Date(year, month, 0);
+    		var days = d.getDate();
+
+    		for (i=1; i<=day-1; i++) {
+    			$('#reservation-date-day').append('<option value="' + i + '" disabled=disabled>' + i + '</option>');
+    		}
+    		for (i=day; i<=days; i++) {
+    			$('#reservation-date-day').append('<option value="' + i + '">' + i + '</option>');
+    		}
+    	} else {
+    		var month = $(this).val();
+    		var d= new Date(year, month, 0);
+    		var days = d.getDate();
+
+    		for (i=1; i<=days; i++) {
+    			$('#reservation-date-day').append('<option value="' + i + '">' + i + '</option>');
+    		}
+    	}
+
+    }
+
 
 	jQuery(function($) {
 
@@ -46,5 +80,10 @@
 		styleSelect();
 
 		createCheckbox();
+
+	    $('#reservation-date-month').change(function(){
+			checkDate();
+	    });
+		
 
 	}); // end doc ready

@@ -33,7 +33,4 @@ return array (
 	// define true or false
 	'responsive' => false,
 
-	// google maps lng and lat defined as a data attribute on a map div
-	'lnglat' => 'xxxx'
-
 );

@@ -9,8 +9,6 @@
 
     <?/* Prefetch DNS for external assets (Twitter widgets, Maps etc). */?>
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
-    <link rel="dns-prefetch" href="//maps.gstatic.com">
-    <link rel="dns-prefetch" href="//maps.googleapis.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
 
     <?/* Prerender pages for browser preloading */?>
@@ -73,11 +71,6 @@
     <?/* Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline */?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <?php if ($page === 'contact'): ?>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <?php endif ?>
-
 
     <? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
     <script src="/assets/js/lib/conditionizr.js"></script>
