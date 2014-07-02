@@ -140,24 +140,21 @@ require '/var/www/shared/formincludes/signupFormFooter.php';
 				<h4 class="clear">Restaurant/Hotel/Function Booking</h4>
 
 				<label for="reservation-date" >Arrival/Reservation Date</label>
-				<select name="reservation-date-day" id="reservation-date-day" data-required="<?= $reservationDateRequired; ?>" data-group="reservation-date">
-					<option value="Day">Day</option>
-					<?php
-					for ($i = 1; $i <= 31; $i++) { ?>
-						<option value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->day == $i ? ' selected="selected"' : '' ?>><?php echo $i ?></option>
+				<select name="reservation-date-day" id="reservation-date-day" data-required="<?= $reservationDateRequired; ?>" data-group="reservation-date" class="select">
+					<option value="Day">DD</option>
+					<?php for ($i = 1; $i <= 31; $i++) { ?>
+						<option class="date-day-<?php echo $i ?>" value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->day == $i ? ' selected="selected"' : '' ?>><?php echo $i ?></option>
 					<? } ?>
 				</select>
-
-				<select name="reservation-date-month" id="reservation-date-month" data-required="<?= $reservationDateRequired; ?>" data-group="reservation-date">
-					<option value="Month">Month</option>
-					<?php for ($i = 1; $i <= 12; $i++) { ?>
-						<option value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->month == $i ? ' selected="selected"' : '' ?>><?php echo date('M', mktime(0, 0, 0, $i, 1)) ?></option>
+				<select name="reservation-date-month" id="reservation-date-month" data-required="<?= $reservationDateRequired; ?>" data-group="reservation-date" class="select">
+					<option value="Month">MM</option>
+					<?php $currentMonth = date('n'); for ($i = $currentMonth; $i <= $currentMonth+11; $i++) { ?>
+						<option class="<? $currentYear = date('Y'); if($i<=12) {echo $currentYear;} else {echo $currentYear+1;} ?>" value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->month == $i ? ' selected="selected"' : '' ?>><?php echo date('M', mktime(0, 0, 0, $i, 1)) ?></option>
 					<? } ?>
 				</select>
-
-				<select name="reservation-date-year" id="reservation-date-year" data-required="<?= $reservationYearRequired; ?>" data-group="reservation-date">
-					<option value="Year">Year</option>
-					<?php for ($i = date('Y'); $i <= date('Y') + 2; $i++) { ?><option value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->year == $i ? ' selected="selected"' : '' ?>><?php echo $i ?></option>
+				<select name="reservation-date-year" id="reservation-date-year" data-required="<?= $reservationYearRequired; ?>" data-group="reservation-date" class="select" disabled>
+					<option value="Year">YY</option>
+					<?php for ($i = date('Y'); $i <= date('Y') + 1; $i++) { ?><option class="<?php echo $i ?>" value="<?php echo $i ?>"<?php echo $fh->fields['reservation-date']->year == $i ? ' selected="selected"' : '' ?>><?php echo $i ?></option>
 					<? } ?>
 				</select>
 			</div>
