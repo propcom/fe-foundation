@@ -1,4 +1,4 @@
 <?php
 return array(
-  'driver' => 'db',
+	'driver' => 'db',
 );

@@ -10,8 +10,8 @@
  * @link       http://fuelphp.com
  */
 
-return array (	
-	
+return array (
+
 	'site_email' => 'frontend@propcom.co.uk',
 
 	'siteurl' => 'example.com',
