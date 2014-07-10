@@ -41,9 +41,21 @@ return array(
 	 *
 	 * Set this to false or remove if you using mod_rewrite.
 	 */
-	'index_file'  => 'index.php',
+	'index_file'  => false,
 
 	'profiling'  => false,
+
+	/**
+	 * profiling_paths - The paths to show in profiler.
+	 *
+	 * If you do not wish to see path set to 'NULL'
+	 * You can also add other paths that you wish not to see
+	 */
+	'profiling_paths' => array(
+		'APPPATH' => APPPATH,
+		'COREPATH' => COREPATH,
+		'PKGPATH' => PKGPATH,
+	),
 
 	/**
 	 * Default location for the file cache
@@ -70,6 +82,8 @@ return array(
 		'throttle'     => 10,
 		// Should notices from Error::notice() be shown?
 		'notices'      => true,
+		// Render previous contents or show it as HTML?
+		'render_prior' => true,
 	),
 
 	/**
@@ -77,7 +91,7 @@ return array(
 	 */
 	'language'           => 'en', // Default language
 	'language_fallback'  => 'en', // Fallback language when file isn't available for default language
-	'locale'             => 'en_US', // PHP set_locale() setting, null to not set
+	'locale'             => 'en_GB', // PHP set_locale() setting, null to not set
 
 	'encoding'  => 'UTF-8',
 
@@ -100,9 +114,20 @@ return array(
 	 * Fuel::L_INFO
 	 * Fuel::L_ALL
 	 */
-	'log_threshold'    => Fuel::L_WARNING,
+	'log_threshold'    => Fuel::L_ALL,
+
+	/**
+	 * Log file and path. If no filename is given, it will be generated.
+	 */
+	'log_file'         => null,
 	'log_path'         => APPPATH.'logs/',
+
 	'log_date_format'  => 'Y-m-d H:i:s',
+
+	/**
+	 * If true, a backtrace is printed when a PHP fatal error is encountered in CLI mode
+	 */
+	'cli_backtrace'    => true,
 
 	/**
 	 * Security settings
@@ -173,6 +198,11 @@ return array(
 	),
 
 	/**
+	 * Controller class prefix
+	 */
+	 'controller_prefix' => 'Controller_',
+
+	/**
 	 * Routing settings
 	 */
 	'routing' => array(
@@ -180,6 +210,31 @@ return array(
 		 * Whether URI routing is case sensitive or not
 		 */
 		'case_sensitive' => true,
+
+		/**
+		 *  Wether to strip the extension
+		 */
+		'strip_extension' => true,
+	),
+
+	/**
+	 * Response settings
+	 */
+	'response' => array(
+		/**
+		 *  Wether to support URI wildcards when redirecting
+		 */
+		'redirect_with_wildcards' => true,
+	),
+
+	/**
+	 * Lang settings
+	 */
+	'lang' => array(
+		/*
+		 * Name of the table used by the Lang_Db driver
+		 */
+		'table_name' => 'lang',
 	),
 
 	/**
