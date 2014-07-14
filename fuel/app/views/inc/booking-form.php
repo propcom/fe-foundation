@@ -23,7 +23,7 @@ $addressRequired = false;   // Set to 'postcode' (with quotes) to just make post
 $additionalInfoRequired = false;
 $cvRequired = false;
 $commentsRequired = false;
-$reservationDateRequired = false;
+$reservationDateRequired = true;
 $reservationYearRequired = false;
 $reservationDepartureRequired = false;
 $reservationTimeRequired = false;
@@ -138,7 +138,6 @@ require '/var/www/shared/formincludes/signupFormFooter.php';
 
 			<div class="field-wrap<?php if ($fh->fields['reservation-date']->isError) { ?> error<? } ?>">
 				<h4 class="clear">Restaurant/Hotel/Function Booking</h4>
-
 				<label for="reservation-date" >Arrival/Reservation Date</label>
 				<select name="reservation-date-day" id="reservation-date-day" data-required="<?= $reservationDateRequired; ?>" data-group="reservation-date" class="select">
 					<option value="Day">DD</option>

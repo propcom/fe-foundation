@@ -1,5 +1,4 @@
 
-
 	function styleSelect() {
 		$('select').wrap('<div class="select-wrap" />');
 		$('select').each(function(){
@@ -38,6 +37,7 @@
 		});
 	}
 
+
 	function checkDate() {
 
 		var d = new Date();
@@ -49,23 +49,24 @@
 		$('#reservation-date-day').empty();
 		$('#reservation-date-day').append('<option value="Day">Day</option>');
 
-		if($(this).val()==month) {
-			var month = $(this).val();
+
+		if($('#reservation-date-month option:selected').val()==month) {
+			var month = $('#reservation-date-month option:selected').val();
 			var d= new Date(year, month, 0);
 			var days = d.getDate();
 
-			for (i=1; i<=day; i++) {
+			for (i=0; i<=day; i++) {
 				$('#reservation-date-day').append('<option value="' + i + '" disabled=disabled>' + i + '</option>');
 			}
 			for (i=day+1; i<=days; i++) {
 				$('#reservation-date-day').append('<option value="' + i + '">' + i + '</option>');
 			}
 		} else {
-			var month = $(this).val();
+			var month = $('#reservation-date-month option:selected').val();
 			var d= new Date(year, month, 0);
 			var days = d.getDate();
 
-			for (i=1; i<=days; i++) {
+			for (i=0; i<=days; i++) {
 				$('#reservation-date-day').append('<option value="' + i + '">' + i + '</option>');
 			}
 		}
@@ -73,8 +74,8 @@
 		var selectedMonth = $('#reservation-date-month option:selected').attr('class');
 
 		$('#reservation-date-year .' + selectedMonth).prop('selected', true);
-    }
 
+	}
 
 	jQuery(function($) {
 
@@ -87,6 +88,5 @@
 	    $('#reservation-date-month').change(function(){
 			checkDate();
 	    });
-
 
 	}); // end doc ready

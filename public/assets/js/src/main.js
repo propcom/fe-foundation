@@ -42,8 +42,6 @@ MAIN = (function ($) {
 		//signup
 		$('#signup-form').ajaxform({
 			error_location: 'input', // input, label or tooltip
-			form_success: function() { /*callback here*/ },
-			form_failure: function() { /*callback here*/ }
 		});
 
 		//contact
@@ -56,8 +54,9 @@ MAIN = (function ($) {
 		//booking
 		$('#booking-form').ajaxform({
 			error_location: 'input', // input, label or tooltip
-			form_success: function() { /*callback here*/ },
-			form_failure: function() { /*callback here*/ }
+			form_before_send: function() { 
+				$('#reservation-date-year').removeAttr('disabled');
+			}
 		});
 
 	};

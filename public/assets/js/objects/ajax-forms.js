@@ -147,7 +147,6 @@
 					callback();
 				}
 			} else {
-
 				// do some voodoo to show errors
 				this.error_handler(form_instance);
 			}
@@ -291,6 +290,12 @@
 
 		send_request : function(form_instance) {
 
+			// set before send callback
+			if (form_instance.settings.form_before_send != null) {
+				form_instance.settings.form_before_send.call(undefined);
+			}
+
+
 			var instance = this;
 
 			// clear unpopulated placeholder fields
@@ -322,6 +327,7 @@
 					var form_handle = $('#' + form_instance.handle.attr('id'));
 					form_handle.find('input, textarea, select').attr('disabled', 'disabled');
 					form_handle.find('input.submit').val('Working...');
+
 
 				},
 			  	success: function(data) {
@@ -456,6 +462,7 @@
 		    	error_location   : 'input',
 		    	show_alert       : false,
 		    	single_page_site : false,
+		    	form_before_send : function() {},
 		    	form_success     : function() {},
 		    	form_failure     : function() {}
 		    }, options);
