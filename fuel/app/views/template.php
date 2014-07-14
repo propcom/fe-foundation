@@ -69,7 +69,7 @@
     <?/* JavaScript at the bottom for fast page loading  */?>
 
     <?/* Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline */?>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
     <? IF (Fuel::$env === Fuel::DEVELOPMENT): ?>
