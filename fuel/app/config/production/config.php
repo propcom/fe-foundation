@@ -6,7 +6,7 @@ return array(
 		'notices' => false,
 	],
 
-	'caching' => true,
+	'caching' => false, // Explicitly false! We shouldn't use this as it doesn't quite work right
 
 	'log_threshold'    => Fuel::L_ERROR,
 );
