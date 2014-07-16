@@ -39,10 +39,10 @@
     "install" : {
 
         "ie-conditional.php" : "fuel/app/views",
-        "_foundation-960.scss" : "public/assets/sass/foundation",
-        "_foundation-1280.scss" : "public/assets/sass/foundation",
-        "_ie8-foundation-960.scss" : "public/assets/sass/foundation",
-        "_ie8-foundation-1280.scss" : "public/assets/sass/foundation"
+        "foundation/_foundation-960.scss" : "public/assets/sass/foundation",
+        "foundation/_foundation-1280.scss" : "public/assets/sass/foundation",
+        "foundation/_ie8-foundation-960.scss" : "public/assets/sass/foundation",
+        "foundation/_ie8-foundation-1280.scss" : "public/assets/sass/foundation"
 
     }
 
