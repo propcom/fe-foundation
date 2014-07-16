@@ -1,0 +1,46 @@
+{
+
+    "name": "fe-foundation",
+    "authors": [
+
+        "Callam Williams"
+
+    ],
+
+    "description": "Foundation 5 Grid system modified to work in IE8 and for 960 or 1280 widths",
+    "main": "ie-conditional.php",
+    "repository": {
+
+        "type" : "git",
+        "url" : "https://github.com/propcom/fe-foundation.git"
+
+    },
+
+    "keywords": [
+
+        "grid",
+        "foundation",
+        "php",
+        "Propeller",
+        "propcomm",
+        "propeller",
+        "propcom"
+
+    ],
+
+    "license": "Public",
+    "homepage": "https://github.com/propcom/fe-foundation.git",
+
+    "ignore" : [
+
+    	"/httpdocs/"
+    ],
+
+    "install" : {
+
+        "ie-conditional.php" : "fuel/app/views",
+        "foundation/" : "public/assets/sass"
+
+    }
+
+}
