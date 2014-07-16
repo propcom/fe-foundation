@@ -10,7 +10,7 @@ http://foundation.zurb.com/docs/components/block_grid.html
 Install
 =======
 
-Copy the conditional statements into the head of your doc, drag the foundation folder into your sass folder and include the required grid below everything else
+Copy the conditional statements into the head of your doc, drag the foundation folder into your sass folder and include the required grid below everything else in main.scss
 
 Usage
 =====
