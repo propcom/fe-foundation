@@ -45,8 +45,12 @@ Offsets
   <div class="small-2 small-pull-10 columns">2, last</div>
 </div>
 <div class="row">
-  <div class="large-9 large-push-3 columns">9</div>
-  <div class="large-3 large-pull-9 columns">3, last</div>
+  <div class="large-9 large-offset-3 columns">9</div>
+  <div class="large-3 large-offset-9 end columns">3, last</div>
+</div>
+<div class="row">
+  <div class="large-4 large-centered end columns">4 centered</div>
+  <div class="large-4 medium-6 medium-centered columns">4, medium centered</div>
 </div>
 ```
 Block Grid
